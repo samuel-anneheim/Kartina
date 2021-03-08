@@ -1,0 +1,9 @@
+.idea
+node_modules
+vendor
+*.css.map
+*.css
+
+.vscode
+.sass-cache
+*.scss.map
