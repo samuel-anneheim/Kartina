@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #0e0e0e;
+    color: #EDEDE7;
+    font-family: 'Noto Sans TC', sans-serif;
+
+    div.container {
+        width: 100%;
+
+        header {
+            width: 55%;
+            margin: auto;
+
+            .nom-artiste {
+                text-align: center;
+
+                h1 {
+                    font-size: 50px;
+                    margin: 5px;
+                    width: 100%;
+                }
+
+                span {
+                    font-size: 25px;
+                }
+            }
+
+            .presentation-artiste {
+                margin-top: 100px;
+                text-align: justify;
+            }
+        }
+
+        div.container-logo {
+            margin: 50px  auto 50px;
+            text-align: center;
+            width: 350px;
+
+            figure img {
+                width: 40px;
+                margin: 10px;
+            }
+        }
+
+        section {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            article {
+                height: 500px;
+                max-width: 600px;
+                min-width: 150px;
+                padding: 0;
+                margin: 10px;
+
+                @media (max-width: 666px) {
+                    height: 400px;
+                }
+                @media (max-width: 480px) {
+                    height: 340px;
+                }
+
+                figure {
+                    height: auto;
+                    min-width: 190px;
+                    margin: 0;
+                    padding: 0;
+
+                    img {
+                        width: auto;
+                        min-width: 190px;
+                        height: 400px;
+
+                        @media (max-width: 666px) {
+                            height: 300px;
+                        }
+                        @media (max-width: 480px) {
+                            height: 240px;
+                            min-width: 190px;
+                            
+                        }
+                    }
+
+                    figcaption{
+                        text-align: right;
+                        @media (max-width: 480px) {
+                            font-size: 0.8em;
+                            text-align: center;
+                        }
+
+                        span.titre-oeuvre{
+                            text-decoration: underline;
+
+                        }
+                        p{
+                            margin: 0;
+                            padding: 0;
+
+                            span.prix{
+                                font-weight: bold;
+                                font-size: 1.2em;
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+div.container-img {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    article {
+        width: 500px;
+
+        margin-top: 50px;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+
+        figure {
+            margin: 0;
+            width: 100%;
+            min-width: 200px;
+
+            img {
+                height: auto;
+                width: 100%;
+                min-width: 200px;
+                margin: auto;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                display: flex;
+                object-fit: cover;
+            }
+
+            figcaption {
+                display: flex;
+                justify-content: space-between;
+                margin: 5px;
+
+                p.titre {
+                    font-weight: bold;
+                }
+            }
+
+        }
+    }
+}

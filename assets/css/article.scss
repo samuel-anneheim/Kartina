@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #0f0d0c;
+    background-color: #e7eae8;
+    font-family: 'Noto Sans TC', sans-serif;
+
+    div.container {
+        width: 97%;
+        margin: auto;
+
+        section.presentationArticle {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            article.presentationImage {
+                width: 49%;
+                border: 1px solid red;
+
+                figure.grandeImage {
+                    width: 100%;
+                    margin: 30px 0;
+                    height: auto;
+                    max-height: 450px;
+                    min-height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+
+
+                    img {
+                        max-height: 450px;
+                        width: 75%;
+                        box-shadow: 0 5px 10px black;
+                    }
+                }
+
+                div.selection-image {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    height: 170px;
+
+                    figure.listeImage {
+                        display: flex;
+                        height: 80%;
+
+                        img {
+                            width: auto;
+                            height: 80%;
+                            margin: 10px 20px 50px 0px;
+                            border: 1px solid red;
+                        }
+                    }
+
+                    figure.aggrandirImage {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding-top: 10px;
+
+                        img {
+                            width: auto;
+                            height: 40px;
+                        }
+
+                        figcaption {
+                            text-align: center;
+
+                            p {
+                                margin: 5px;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            article.parcourDAchat {
+                width: 49%;
+                border: 1px solid blue;
+
+                div.blocHaut {
+
+                    h2 {
+                        text-align: center;
+                    }
+
+                    div.catAchat {
+                        display: flex;
+                        justify-content: space-around;
+
+                        div {
+
+                            div {
+                                height: 50px;
+                                width: 50px;
+                                border: black solid 1px;
+                                border-radius: 50%;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                            }
+
+                            p {
+                                text-align: center;
+                                margin: 0;
+                            }
+                        }
+                    }
+                }
+
+                div.blocOption {
+                    width: 95%;
+                    margin: auto;
+                    background-color: white;
+                    border: 1px solid #6C6C6C;
+
+                    div.option {
+                        border-bottom: 1px solid #6C6C6C;
+                        display: flex;
+                        justify-content: space-around;
+                        justify-items: center;
+
+                        div.image {
+                            width: 25%;
+                        }
+
+                        div.descriptionFormat {
+                            width: 50%;
+                        }
+
+                        div.checkOrNot {
+                            width: 25%;
+                            position: relative;
+
+                            figure {
+                                position: absolute;
+                                right: 0;
+                                bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+            article.descArticle {
+                width: 49%;
+                border: 1px solid yellowgreen;
+            }
+        }
+
+        
+    }
+}
+
+figure {
+    margin: 0;
+}
