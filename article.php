@@ -1,7 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php 
 
-<head>
+    $stylesheet = './assets/css/article/article.css';
+    $title = 'Article';
+    require __DIR__.'./partials/navbar.php';
+
+?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/article.css">

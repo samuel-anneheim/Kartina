@@ -17,7 +17,7 @@
                 <div class="control next-slide">&#9658;</div>
             </div>
             <div class="link_news">
-                <a href="">
+                <a href="./article.php">
                     <h1>Nouvelle oeuvres</h1>
                     <span>Les collections légendaires</span>
                     <p>Explorer la nouvelle collection</p>
@@ -32,7 +32,7 @@
             </div>
             <div class="container-img">
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/hes-not-here.jpg" alt="he's not here">
                             <figcaption>
@@ -49,7 +49,7 @@
                     </a>
                 </article>
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/ebony-and-lvory.jpg" alt="Ebony and Ivory">
                             <figcaption>
@@ -66,7 +66,7 @@
                     </a>
                 </article>
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/lin-long-2.jpg" alt="Lin long 2">
                             <figcaption>
@@ -83,7 +83,7 @@
                     </a>
                 </article>
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/maya-goddess.jpg" alt="Maya Goddess">
                             <figcaption>
@@ -100,7 +100,7 @@
                     </a>
                 </article>
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/trinity-college-library.jpg" alt="Trinity College Library">
                             <figcaption>
@@ -117,7 +117,7 @@
                     </a>
                 </article>
                 <article>
-                    <a href="">
+                    <a href="./article.php">
                         <figure>
                             <img src="./assets/img/index/vieprivee.jpg" alt="">
                             <figcaption>
@@ -140,7 +140,7 @@
         <section class="quatro">
             <article class="voyage" style="background-image: url(./assets/img/index/manhattan-lights.jpg);">
                 <div>
-                    <a href="">
+                    <a href="./article.php">
                         <h3>Voyage</h3>
                         <span>Vivez vos rêves</span>
                         <br>
@@ -151,7 +151,7 @@
             <article class="black-and-white"
                 style="background-image: url(./assets/img/index/hagenmuller-cordee-sur-les-aretes-de-rochefort-ii.jpg);">
                 <div>
-                    <a href="">
+                    <a href="./article.php">
                         <h3>Noir & blanc</h3>
                         <span>oeuvres intemporelles</span>
                         <br>
@@ -161,7 +161,7 @@
             </article>
             <article class="artiste" style="background-image: url(./assets/img/index/hotel-seventies-japan.jpg);">
                 <div>
-                    <a href="">
+                    <a href="./article.php">
                         <h3>Aurélien Vilette </h3>
                         <span>Edifices oubliés</span>
                         <br>
@@ -170,7 +170,7 @@
                 </div>
             </article>
             <article class="last-exe" style="background-image: url(./assets/img/index/tokyo-vi.jpg);">
-                <a href="">
+                <a href="./article.php">
                     <div>
                         <h3>Derniers exemplaires </h3>
                         <span>passer pas à coté de votre oeuvre</span>

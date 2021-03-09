@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=*, initial-scale=1.0">
-    <title>Aurelien vilette</title>
-    <link rel="stylesheet" href="./assets/css/pageArtiste.css">
-</head>
+    $stylesheet = "./assets/css/pageArtiste/pageArtiste.css";
+    $title = "Aurelien vilette";
+    require __DIR__.'./partials/navbar.php';
 
-<body>
-    <div class="container">
+?>
+
         <header>
             <div class="nom-artiste">
                 <h1>Aurélien Vilette</h1>
@@ -35,7 +31,7 @@
         </div>
         <section>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/verticalite-volute-ii-pologne.jpg" alt="verticalite-volute-ii-pologne">
                         <figcaption>
@@ -46,7 +42,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/hotel-seventies-japan.jpg" alt="hotel-seventies-japan">
                         <figcaption>
@@ -57,7 +53,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/verticalite-volute-pologne.jpg" alt="verticalite-volute6pologne">
                         <figcaption>
@@ -68,7 +64,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/erosions-venitiennes-ii.jpg" alt="erosions-venitiennes-ii">
                         <figcaption>
@@ -79,7 +75,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/topophilia-la-villa-rose-liban.jpg" alt="topophilia-la-villa-rose-liban">
                         <figcaption>
@@ -90,7 +86,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/au-dela.jpg" alt="au-dela">
                         <figcaption>
@@ -101,7 +97,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/la-bicyclette-italie.jpg" alt="la-bicyclette-italie">
                         <figcaption>
@@ -113,7 +109,7 @@
             </article>
 
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/reminiscence-le-buffet.jpg" alt="reminiscence-le-buffet">
                         <figcaption>
@@ -124,7 +120,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/cuba-verticalite.jpg" alt="cuba-verticalite">
                         <figcaption>
@@ -135,7 +131,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/reminiscence-livres-a-eux-memes.jpg"
                             alt="reminiscence-livres-a-eux-memes">
@@ -147,7 +143,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/palazzo-sotto-voce.jpg" alt="palazzo-sotto-voce">
                         <figcaption>
@@ -158,7 +154,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/verticalite-vue-sur-cour.jpg" alt="verticalite-vue-sur-cour">
                         <figcaption>
@@ -169,7 +165,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/erosions-venitiennes-ii.jpg" alt="erosions-venitiennes-ii">
                         <figcaption>
@@ -180,7 +176,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/lost-in-the-pines.jpg" alt="lost-in-the-pines">
 
@@ -192,7 +188,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/verticalite-centrale-hydraulique.jpg"
                             alt="verticalite-centrale-hydraulique">
@@ -204,7 +200,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/verticalite-la-ville-becarre-france.jpg"
                             alt="verticalite-la-ville-becarre-france">
@@ -216,7 +212,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/palaciorubato.jpg" alt="palaciorubato">
                         <figcaption>
@@ -227,7 +223,7 @@
                 </a>
             </article>
             <article>
-                <a href="./article.html">
+                <a href="./article.php">
                     <figure>
                         <img src="./assets/img/pageArtiste/villa-arioso.jpg" alt="villa-arioso">
                         <figcaption>

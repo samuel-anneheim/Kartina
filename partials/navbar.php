@@ -16,7 +16,7 @@ require __DIR__ . '/../config/configTitre.php';
         <link rel="stylesheet" href="<?= $stylesheet ?>">
     <?php } ?>
 
-    <link rel="stylesheet" href="assets/css/styleNavBar.css">
+    <link rel="stylesheet" href="assets/css/nav/styleNavBar.css">
 
     <?php
     //Ajout du css de la page 
@@ -37,7 +37,7 @@ require __DIR__ . '/../config/configTitre.php';
             <div class="partOne">
 
                 <div class="en_tete">
-                    <a href="./header.html" id="index">Kartina</a>
+                    <a href="./index.php" id="index">Kartina</a>
                     <p>Photographie d'art en édition limitée</p>
                 </div>
 
@@ -50,11 +50,11 @@ require __DIR__ . '/../config/configTitre.php';
 
                 <div class="cap">
                     <div class="account">
-                        <a href="./account.html">Compte</a>
+                        <a href="./account.php">Compte</a>
                     </div>
 
                     <div class="help">
-                        <a href="./help.html"> Nous contacter</a>
+                        <a href="./help.php"> Nous contacter</a>
                     </div>
 
                     <div class="panier">
@@ -77,7 +77,7 @@ require __DIR__ . '/../config/configTitre.php';
                     <ul>
                         <li><a href="" id="picture">Photographies</a></li>
                         <li><a href="" id="quatro">Nouveautés</a></li>
-                        <li><a href="" id="quatro">Artistes</a></li>
+                        <li><a href="./artiste.php" id="quatro">Artistes</a></li>
                         <li><a href="" id="quatro">Derniers exemplaires</a></li>
                     </ul>
 
