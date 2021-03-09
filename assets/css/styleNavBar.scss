@@ -23,11 +23,11 @@ nav {
         padding: 0;
         background-color: $bg-color;
 
-        // a {
-        //     text-decoration: none;
-        //     color: $color-title;
-        //     font-family: $style-font;
-        // }
+        a {
+            text-decoration: none;
+            color: $color-title;
+            font-family: $style-font;
+        }
 
 
         .en_tete {
@@ -71,7 +71,7 @@ nav {
                 }
             }
 
-            p {
+            >p {
                 width: 100%;
                 height: auto;
                 font-family: $style-font;

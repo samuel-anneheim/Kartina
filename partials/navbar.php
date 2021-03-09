@@ -17,6 +17,12 @@ require __DIR__ . '/../config/configTitre.php';
     <?php } ?>
 
     <link rel="stylesheet" href="assets/css/styleNavBar.css">
+
+    <?php
+    //Ajout du css de la page 
+    if (isset($stylesheet)) { ?>
+        <link rel="stylesheet" href="<?= $stylesheet ?>">
+    <?php } ?>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <title><?= $title ?></title>
