@@ -21,7 +21,7 @@
             <p>L'équipe Kartina</p>
 
             <div class="back_button">
-                <a href="./header.html">Retour à la page d'accueil</a>
+                <a href="./index.php">Retour à la page d'accueil</a>
             </div>
         </section>
 
