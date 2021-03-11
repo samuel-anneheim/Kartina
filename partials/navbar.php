@@ -1,6 +1,11 @@
 <?php
 //Inclure le titre sur les pages
-require __DIR__ . '/../config/configTitre.php';
+require __DIR__.'/../config/database.php';
+require __DIR__.'/../config/configTitre.php';
+
+global $db;
+$orientations = $db->query('SELECT * FROM orientation')->fetchAll();
+
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +22,6 @@ require __DIR__ . '/../config/configTitre.php';
     <?php } ?>
 
     <link rel="stylesheet" href="assets/css/nav/styleNavBar.css">
-
-    <?php
-    //Ajout du css de la page 
-    if (isset($stylesheet)) { ?>
-        <link rel="stylesheet" href="<?= $stylesheet ?>">
-    <?php } ?>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
     <title><?= $title ?></title>
