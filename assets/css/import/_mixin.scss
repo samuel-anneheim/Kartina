@@ -1,0 +1,18 @@
+
+
+@mixin Tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @mixin Phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @mixin panier-responsive {
+    @media (max-width: 1058px) {
+      @content;
+    }
+  }
+  

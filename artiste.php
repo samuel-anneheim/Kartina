@@ -234,7 +234,9 @@
                 </a>
             </article>
         </section>
-    </div>
-</body>
 
-</html>
+<?php 
+
+require __DIR__.'./partials/footer.php'
+
+?>

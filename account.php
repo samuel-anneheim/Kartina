@@ -41,8 +41,8 @@
 
         </div>
 
-    </div>
+<?php 
 
-</body>
+require __DIR__.'./partials/footer.php';
 
-</html>
+?>

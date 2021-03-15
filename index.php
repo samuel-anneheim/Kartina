@@ -179,7 +179,6 @@
                 </a>
             </article>
         </section>
-    </div>
 
     <script>
         const delay = 15000; //ms
@@ -217,6 +216,9 @@ document.querySelector(".prev-slide").addEventListener("click", function() {
   restart();
 });
     </script>
-</body>
 
-</html>
+<?php 
+
+require './partials/footer.php';
+
+?>
