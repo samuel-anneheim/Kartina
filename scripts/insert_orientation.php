@@ -2,7 +2,7 @@
 
 require __DIR__.'/../config/database.php';
 
-$orientations = ["Classique", "Grand", "Géant", "Collector"];
+$orientations = ["Portrait", "Paysage", "Carré", "Panoramique"];
 
 $db->query('SET FOREIGN_KEY_CHECKS = 0');
 $db->query('TRUNCATE orientation');
