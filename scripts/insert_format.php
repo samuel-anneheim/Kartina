@@ -3,10 +3,10 @@
 require __DIR__.'/../config/database.php';
 
 $formats = [
+    ["Classique", "24 * 30 cm", "Tirage encadré", "classique.jpeg"],
     ["Grand", "60 * 75 cm", "Photographie montée sur aluminium", "grand.jpeg"],
     ["Géant", "100 * 125 cm", "Photographie montée sur aluminium", "geant.jpeg"], 
     ["Collector", "120 * 150 cm", "Photographie montée sur aluminium", "collector.jpeg"],
-    ["Classique", "24 * 30 cm", "Tirage encadré", "classique.jpeg"],
 ];
 
 $db->query('SET FOREIGN_KEY_CHECKS = 0');

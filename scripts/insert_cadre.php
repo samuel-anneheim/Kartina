@@ -8,10 +8,10 @@ $cadres = [
     ["Encadrement blanc satin", "Caisse américaine blanche satinée assemblèe à la main, apportant un effet de la luminosité et de profondeur", "encaBlancSatin.jpeg" ],
     ["Encadrement noyer", "Caisse américaine en noyer massif assemblèe à la main, apportant un effet de la luminosité et de profondeur", "encaNoyer.jpeg"],
     ["Encadrement chêne", "Caisse américaine en chêne massif assemblèe à la main, apportant un effet de la luminosité et de profondeur", "encaChene.jpeg"],
-    ["Aluminum noir", "", "aluNoir.jpeg"],
-    ["Bois blanc", "", "boisBlanc.jpeg"],
-    ["Acajou mat", "", "acajouMat.jpeg"],
-    ["Aluminium brossé", "", "aluBrosse.jpeg"]
+    ["Aluminum noir", null, "aluNoir.jpeg"],
+    ["Bois blanc", null, "boisBlanc.jpeg"],
+    ["Acajou mat", null, "acajouMat.jpeg"],
+    ["Aluminium brossé", null, "aluBrosse.jpeg"]
 ];
 
 $db->query('SET FOREIGN_KEY_CHECKS = 0');
