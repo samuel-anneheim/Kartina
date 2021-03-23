@@ -20,7 +20,7 @@ USE `kartina` ;
 CREATE TABLE IF NOT EXISTS `kartina`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(255) NOT NULL,
-  `civilité` VARCHAR(45) NOT NULL,
+  `civilite` VARCHAR(45) NOT NULL,
   `nom` VARCHAR(255) NOT NULL,
   `prenom` VARCHAR(255) NOT NULL,
   `pwd` VARCHAR(255) NOT NULL,
