@@ -2,6 +2,7 @@
 //Inclure le titre sur les pages
 require __DIR__.'/../config/database.php';
 require __DIR__.'/../config/configTitre.php';
+require __DIR__.'/../config/fonction.php';
 
 global $db;
 $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
