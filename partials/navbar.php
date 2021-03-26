@@ -78,7 +78,7 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
                     <ul>
                         <li><a href="" id="picture">Photographies</a></li>
                         <li><a href="" id="quatro">Nouveautés</a></li>
-                        <li><a href="./artiste.php" id="quatro">Artistes</a></li>
+                        <li><a href="./artistes.php" id="quatro">Artistes</a></li>
                         <li><a href="" id="quatro">Derniers exemplaires</a></li>
                     </ul>
 

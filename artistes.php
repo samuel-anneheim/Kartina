@@ -22,7 +22,7 @@ $artistes = $db->query('SELECT * FROM user ')->fetchAll();
         
         if ($artiste["isArtiste"]){ ?>
         <article>
-            <div name="cardArtiste">
+            <div class="cardArtiste">
                 <figure>
                     <img src="./assets/img/artiste/<?= $nom."/".$oeuvre['image']; ?>" alt="">
                 </figure>
