@@ -37,17 +37,17 @@ div.container-img{
                     object-fit: cover;
                     border-radius: 20px 20px 0px 0px;
                 }
-            }
-            figcaption{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 50px;
-                display: flex;
-                justify-content:space-between;
-                p{
-                    margin: 10px;
-                    padding: 0;
+                figcaption{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 50px;
+                    display: flex;
+                    justify-content:space-between;
+                    p{
+                        margin: 10px;
+                        padding: 0;
+                    }
                 }
             }
         }

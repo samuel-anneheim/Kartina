@@ -1,17 +1,19 @@
 <?php
 
+    $id = $_GET['id'] ?? 0;
+
     $stylesheet = "./assets/css/pageArtiste/pageArtiste.css";
     $title = "Aurelien vilette";
     require __DIR__.'./partials/navbar.php';
 
     global $db;
     $query = $db->prepare('SELECT * FROM oeuvre WHERE user_id = :id');
-    $query->bindValue(':id', 1);
+    $query->bindValue(':id', $id);
     $query->execute();
     $oeuvres = $query->fetchAll();
 
     $query = $db->prepare('SELECT * FROM user WHERE id = :id');
-    $query->bindValue(':id', 1);
+    $query->bindValue(':id', $id);
     $query->execute();
     $artiste = $query->fetch();
 
