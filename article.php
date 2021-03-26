@@ -28,7 +28,7 @@
                     <figure class="aggrandirImage">
                         <img src="./assets/img/article/expand.png" alt="">
                         <figcaption>
-                            <p>Pleine écran</p>
+                            <p>Plein écran</p>
                         </figcaption>
                     </figure>
 
