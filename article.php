@@ -1,14 +1,24 @@
-<?php 
+<?php
 
-    $stylesheet = './assets/css/article/article.css';
-    $title = 'Article';
-    require __DIR__.'./partials/navbar.php';
+$stylesheet = './assets/css/article/article.css';
+$title = 'Article';
+require __DIR__ . './partials/navbar.php';
+
+global $db;
+
+$formats = $db->query('SELECT * FROM format')->fetchAll();
+$finitions = $db->query('SELECT * FROM finition')->fetchAll();
+$cadres = $db->query('SELECT * FROM cadre')->fetchAll();
+
+$augmentation = [1, 2, 4, 10];
+$prix = 84;
+
 
 ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/article.css">
-    <title>Article</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="./assets/css/article.css">
+<title>Article</title>
 </head>
 
 <body>
@@ -55,33 +65,78 @@
 
                 <div class="blocOption">
 
-                    <div class="formatGrand option">
-                        <div class="image">
-                            <figure>
-                                <img src="./assets/img/article/grandFormat.png" alt="grand format">
-                            </figure>
-                        </div>
-                        <div class="descriptionFormat">
-                            <p><span class="format">GRAND</span> - 60 x 75cm à partir de <span class="prix">110€</span>
-                            </p>
-                            <p>Photographie montée sur aluminium, édition limitée 500 exemplaires</p>
-                        </div>
-                        <div class="checkOrNot" id="check">
-                            <figure>
-                                <img src="./assets/img/article/check.png" alt="check">
-                            </figure>
-                        </div>
+                    <div class="blocFormat">
+                        <?php foreach ($formats as $key => $format) { ?>
+                            <div class="formatGrand option">
+                                <div class="image">
+                                    <figure>
+                                        <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
+                                    </figure>
+                                </div>
+                                <div class="descriptionFormat">
+                                    <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de 
+                                    <span class="prix"><?= ($prix * $augmentation[$key]) ?>€</span></p>
+                                    <p><?= $format['description'] ?></p>
+                                </div>
+                                <div class="checkOrNot" id="check">
+                                    <figure>
+                                        <img src="./assets/img/article/check.png" alt="check">
+                                    </figure>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div>
 
-                    <div class="formatGeant option">
+                    <div class="blocFintion">
+                        <?php foreach ($finitions as $finition) { ?>
+                            <div class="formatGrand option">
+                                <div class="image">
+                                    <figure>
+                                        <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
+                                    </figure>
+                                </div>
+                                <div class="descriptionFormat">
+                                    <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span></p>
+                                    <p><?= $finition['description'] ?></p>
+                                </div>
+                                <div class="checkOrNot" id="check">
+                                    <figure>
+                                        <img src="./assets/img/article/check.png" alt="check">
+                                    </figure>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <div class="blocCadre">
+                        <?php foreach ($cadres as $cadre) { ?>
+                            <div class="formatGrand option">
+                                <div class="image">
+                                    <figure>
+                                        <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
+                                    </figure>
+                                </div>
+                                <div class="descriptionFormat">
+                                    <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span></p>
+                                    <p><?= $cadre['description'] ?></p>
+                                </div>
+                                <div class="checkOrNot" id="check">
+                                    <figure>
+                                        <img src="./assets/img/article/check.png" alt="check">
+                                    </figure>
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+
+                    <!-- <div class="formatGeant option">
                         <div class="image">
                             <figure>
                                 <img src="./assets/img/article/geantFormat.png" alt="grand format">
                             </figure>
                         </div>
                         <div class="descriptionFormat">
-                            <p><span class="format">GEANT</span> - 100 x 125cm à partir de <span
-                                    class="prix">230€</span></p>
+                            <p><span class="format">GEANT</span> - 100 x 125cm à partir de <span class="prix">230€</span></p>
                             <p>Photographie montée sur aluminium, édition limitée 200 exemplaires</p>
                         </div>
                         <div class="checkOrNot" id="check">
@@ -98,8 +153,7 @@
                             </figure>
                         </div>
                         <div class="descriptionFormat">
-                            <p><span class="format">COLLECTOR</span> - 120 x 150cm à partir de <span
-                                    class="prix">670€</span></p>
+                            <p><span class="format">COLLECTOR</span> - 120 x 150cm à partir de <span class="prix">670€</span></p>
                             <p>Photographie montée sur aluminium, édition limitée 100 exemplaires</p>
                         </div>
                         <div class="checkOrNot" id="check">
@@ -116,8 +170,7 @@
                             </figure>
                         </div>
                         <div class="descriptionFormat">
-                            <p><span class="format">CLASSIQUE</span> - 60 x 75cm à partir de <span
-                                    class="prix">110€</span></p>
+                            <p><span class="format">CLASSIQUE</span> - 60 x 75cm à partir de <span class="prix">110€</span></p>
                             <p>Photographie montée sur aluminium, édition limitée 500 exemplaires</p>
                         </div>
                         <div class="checkOrNot" id="check">
@@ -125,7 +178,7 @@
                                 <img src="./assets/img/article/check.png" alt="check">
                             </figure>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </article>
             <article class="descArticle">
