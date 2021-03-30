@@ -41,9 +41,9 @@ $prix = 84;
                             <p>Plein écran</p>
                         </figcaption>
                     </figure>
-
                 </div>
             </article>
+
             <article class="parcourDAchat">
                 <div class="blocHaut">
                     <h2>Créez votre photographies d'art sur mesure</h2>
@@ -63,123 +63,82 @@ $prix = 84;
                     </div>
                 </div>
 
-                <div class="blocOption">
+                <div class="containerOption">
 
-                    <div class="blocFormat">
-                        <?php foreach ($formats as $key => $format) { ?>
-                            <div class="formatGrand option">
-                                <div class="image">
-                                    <figure>
-                                        <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
-                                    </figure>
+                    <div class="blocOption" id="slide">
+
+                        <div class="blocFormat">
+                            <?php foreach ($formats as $key => $format) { ?>
+                                <div class="formatGrand option">
+                                    <div class="image">
+                                        <figure>
+                                            <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
+                                            <span class="prix"><?= ($prix * $augmentation[$key]) ?>€</span>
+                                        </p>
+                                        <p><?= $format['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
                                 </div>
-                                <div class="descriptionFormat">
-                                    <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de 
-                                    <span class="prix"><?= ($prix * $augmentation[$key]) ?>€</span></p>
-                                    <p><?= $format['description'] ?></p>
+                            <?php } ?>
+                        </div>
+
+                        <div class="blocFintion">
+                            <?php foreach ($finitions as $finition) { ?>
+                                <div class="formatGrand option">
+                                    <div class="image">
+                                        <figure>
+                                            <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span></p>
+                                        <p><?= $finition['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
                                 </div>
-                                <div class="checkOrNot" id="check">
-                                    <figure>
-                                        <img src="./assets/img/article/check.png" alt="check">
-                                    </figure>
+                            <?php } ?>
+                        </div>
+
+                        <div class="blocCadre">
+                            <?php foreach ($cadres as $cadre) { ?>
+                                <div class="formatGrand option">
+                                    <div class="image">
+                                        <figure>
+                                            <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span></p>
+                                        <p><?= $cadre['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
                                 </div>
-                            </div>
-                        <?php } ?>
+                            <?php } ?>
+                        </div>
+
                     </div>
-
-                    <div class="blocFintion">
-                        <?php foreach ($finitions as $finition) { ?>
-                            <div class="formatGrand option">
-                                <div class="image">
-                                    <figure>
-                                        <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
-                                    </figure>
-                                </div>
-                                <div class="descriptionFormat">
-                                    <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span></p>
-                                    <p><?= $finition['description'] ?></p>
-                                </div>
-                                <div class="checkOrNot" id="check">
-                                    <figure>
-                                        <img src="./assets/img/article/check.png" alt="check">
-                                    </figure>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-
-                    <div class="blocCadre">
-                        <?php foreach ($cadres as $cadre) { ?>
-                            <div class="formatGrand option">
-                                <div class="image">
-                                    <figure>
-                                        <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
-                                    </figure>
-                                </div>
-                                <div class="descriptionFormat">
-                                    <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span></p>
-                                    <p><?= $cadre['description'] ?></p>
-                                </div>
-                                <div class="checkOrNot" id="check">
-                                    <figure>
-                                        <img src="./assets/img/article/check.png" alt="check">
-                                    </figure>
-                                </div>
-                            </div>
-                        <?php } ?>
-                    </div>
-
-                    <!-- <div class="formatGeant option">
-                        <div class="image">
-                            <figure>
-                                <img src="./assets/img/article/geantFormat.png" alt="grand format">
-                            </figure>
-                        </div>
-                        <div class="descriptionFormat">
-                            <p><span class="format">GEANT</span> - 100 x 125cm à partir de <span class="prix">230€</span></p>
-                            <p>Photographie montée sur aluminium, édition limitée 200 exemplaires</p>
-                        </div>
-                        <div class="checkOrNot" id="check">
-                            <figure>
-                                <img src="./assets/img/article/check.png" alt="check">
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="formatCollector option">
-                        <div class="image">
-                            <figure>
-                                <img src="./assets/img/article/collectorFormat.png" alt="grand format">
-                            </figure>
-                        </div>
-                        <div class="descriptionFormat">
-                            <p><span class="format">COLLECTOR</span> - 120 x 150cm à partir de <span class="prix">670€</span></p>
-                            <p>Photographie montée sur aluminium, édition limitée 100 exemplaires</p>
-                        </div>
-                        <div class="checkOrNot" id="check">
-                            <figure>
-                                <img src="./assets/img/article/check.png" alt="check">
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="formatClassique option">
-                        <div class="image">
-                            <figure>
-                                <img src="./assets/img/article/classiqueFormat.png" alt="grand format">
-                            </figure>
-                        </div>
-                        <div class="descriptionFormat">
-                            <p><span class="format">CLASSIQUE</span> - 60 x 75cm à partir de <span class="prix">110€</span></p>
-                            <p>Photographie montée sur aluminium, édition limitée 500 exemplaires</p>
-                        </div>
-                        <div class="checkOrNot" id="check">
-                            <figure>
-                                <img src="./assets/img/article/check.png" alt="check">
-                            </figure>
-                        </div>
-                    </div> -->
                 </div>
+                <div class="buttonSelect">
+                    <button class="btn" id="previous" disabled>Précédent</button>
+                    <button class="btn" id="next">Suivant</button>
+                </div>
+
             </article>
             <article class="descArticle">
                 <h1>Jöirg Dickmann</h1>

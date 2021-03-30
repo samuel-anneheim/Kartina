@@ -9,13 +9,16 @@ body {
     font-family: 'Noto Sans TC', sans-serif;
 
     div.container {
-        width: 97%;
+        width: 100%;
         margin: auto;
 
         section.presentationArticle {
+            width: 95%;
+            margin: auto;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            
 
             article.presentationImage {
                 width: 49%;
@@ -117,46 +120,66 @@ body {
                     }
                 }
 
-                div.blocOption {
+                div.containerOption {
                     width: 95%;
                     margin: auto;
-                    background-color: white;
-                    border: 1px solid #6C6C6C;
+                    overflow-y: hidden;
 
-                    div.option {
-                        border-bottom: 1px solid #6C6C6C;
+
+                    div.blocOption {
+                        width: 300%;
+                        margin: auto;
+                        background-color: white;
+                        border: 1px solid #6C6C6C;
                         display: flex;
-                        justify-content: space-around;
-                        justify-items: center;
+                        overflow-y: hidden;
+                        height: auto;
 
-                        div.image {
-                            width: 25%;
-                        }
+                        div {
+                            width: 100%;
+                            
 
-                        div.descriptionFormat {
-                            width: 50%;
-                        }
 
-                        div.checkOrNot {
-                            width: 25%;
-                            position: relative;
+                            div.option {
+                                border-bottom: 1px solid #6C6C6C;
+                                display: flex;
+                                justify-content: space-around;
+                                justify-items: center;
 
-                            figure {
-                                position: absolute;
-                                right: 0;
-                                bottom: 0;
+                                div.image {
+                                    width: 25%;
+                                }
+
+                                div.descriptionFormat {
+                                    width: 50%;
+                                }
+
+                                div.checkOrNot {
+                                    width: 25%;
+                                    position: relative;
+
+                                    figure {
+                                        position: absolute;
+                                        right: 0;
+                                        bottom: 0;
+                                    }
+                                }
                             }
                         }
+
+
                     }
                 }
+
             }
+
             article.descArticle {
                 width: 49%;
                 border: 1px solid yellowgreen;
             }
         }
 
-        
+
     }
 }
 
