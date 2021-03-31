@@ -6,24 +6,34 @@ changeImage('second2', './assets/img/article/nicon-deco.png');
 
 let previous = document.getElementById('previous');
 let next = document.getElementById('next');
-let i = 1;
+let i = 0;
 let slide = document.getElementById('slide');
+
+
 previous.addEventListener("click", function () {
     
-    slide.style.transform= 'translateX -100%'
     i--
-    if (i = 1){
-        previous.disabled = false
-    }
-})
-
-previous.addEventListener("click", function () {
-    
-    slide.style.transform= 'translateX +100%'
-
+    let str = i * 33.33
+    slide.style.transform= `translateX(-${str}%)`
     if (i > 1){
         previous.disabled = false
-    }else if (i = 3){
+    }else if (i == 3){
         next.disabled = true
     }
+
+    console.log(slide.style.transform);
 })
+
+next.addEventListener("click",function (){
+
+    i++
+    let str = i * 33.33
+    slide.style.transform = `translateX(-${str}%)`
+    if (i > 1 ){
+        previous.disabled = false;
+
+    }
+    console.log(slide.style.transform);
+
+} )
+

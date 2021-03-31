@@ -123,7 +123,7 @@ body {
                 div.containerOption {
                     width: 95%;
                     margin: auto;
-                    overflow-y: hidden;
+                    overflow-x: hidden;
 
 
                     div.blocOption {
@@ -132,11 +132,12 @@ body {
                         background-color: white;
                         border: 1px solid #6C6C6C;
                         display: flex;
-                        overflow-y: hidden;
+                        overflow-x: hidden;
                         height: auto;
 
                         div {
                             width: 100%;
+
                             
 
 
