@@ -22,6 +22,7 @@ body {
 
             article.presentationImage {
                 width: 49%;
+                height: max-content;
                 border: 1px solid red;
 
                 figure.grandeImage {
@@ -132,11 +133,12 @@ body {
                         background-color: white;
                         border: 1px solid #6C6C6C;
                         display: flex;
-                        overflow-x: hidden;
+                        overflow: hidden;
                         height: auto;
 
                         div {
                             width: 100%;
+                            height: max-content;
 
                             
 
@@ -175,7 +177,8 @@ body {
             }
 
             article.descArticle {
-                width: 49%;
+                width: 90%;
+                margin: auto;
                 border: 1px solid yellowgreen;
             }
         }

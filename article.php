@@ -42,6 +42,20 @@ $prix = 84;
                         </figcaption>
                     </figure>
                 </div>
+                <article class="descArticle">
+                                <h1>Jöirg Dickmann</h1>
+                                <h2>Mong Kok Minibus</h2>
+                                <p>Né en 1973 à Sauerland, l’artiste Jörg Dickmann s’est installé à Munich dans le sud de l’Allemagne.
+                                    Autodidacte, il s’est intéressé à la photographie dès l’enfance, prenant exemple sur son père qui ne
+                                    quittait jamais son appareil SLR. Il tirait, à ses débuts, des instantanés pendant ses vacances,
+                                    pour le plaisir et sans ambition particulière. Son talent pour la prise de vue et le post traitement
+                                    numérique se développent à la fin des années 90. Doté d’un reflex numérique, il commence à diffuser
+                                    ses images sur les réseaux sociaux, celles-ci sont ensuite publiées dans divers magazines allemands
+                                    (Foto Praxis, Focus ou encore ELLE City). Les thèmes de prédilection de Jörg Dickmann sont les
+                                    paysages urbains, les scènes de rue, l’architecture et l’énergie lumineuse. Épris de voyages qu’il
+                                    mène aux quatre coins du monde, il réalise principalement des clichés en pose longue en
+                                    s’intéressant à richesse chromatique des villes une fois la nuit tombée.</p>
+                            </article>
             </article>
 
             <article class="parcourDAchat">
@@ -67,7 +81,7 @@ $prix = 84;
 
                     <div class="blocOption" id="slide">
 
-                        <div class="blocFormat">
+                        <div class="blocFormat" id="format">
                             <?php foreach ($formats as $key => $format) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
@@ -90,7 +104,7 @@ $prix = 84;
                             <?php } ?>
                         </div>
 
-                        <div class="blocFintion">
+                        <div class="blocFintion" id="finition">
                             <?php foreach ($finitions as $finition) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
@@ -111,7 +125,7 @@ $prix = 84;
                             <?php } ?>
                         </div>
 
-                        <div class="blocCadre">
+                        <div class="blocCadre" id="cadre">
                             <?php foreach ($cadres as $cadre) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
@@ -139,20 +153,6 @@ $prix = 84;
                     <button class="btn" id="next">Suivant</button>
                 </div>
 
-            </article>
-            <article class="descArticle">
-                <h1>Jöirg Dickmann</h1>
-                <h2>Mong Kok Minibus</h2>
-                <p>Né en 1973 à Sauerland, l’artiste Jörg Dickmann s’est installé à Munich dans le sud de l’Allemagne.
-                    Autodidacte, il s’est intéressé à la photographie dès l’enfance, prenant exemple sur son père qui ne
-                    quittait jamais son appareil SLR. Il tirait, à ses débuts, des instantanés pendant ses vacances,
-                    pour le plaisir et sans ambition particulière. Son talent pour la prise de vue et le post traitement
-                    numérique se développent à la fin des années 90. Doté d’un reflex numérique, il commence à diffuser
-                    ses images sur les réseaux sociaux, celles-ci sont ensuite publiées dans divers magazines allemands
-                    (Foto Praxis, Focus ou encore ELLE City). Les thèmes de prédilection de Jörg Dickmann sont les
-                    paysages urbains, les scènes de rue, l’architecture et l’énergie lumineuse. Épris de voyages qu’il
-                    mène aux quatre coins du monde, il réalise principalement des clichés en pose longue en
-                    s’intéressant à richesse chromatique des villes une fois la nuit tombée.</p>
             </article>
         </section>
     </div>
