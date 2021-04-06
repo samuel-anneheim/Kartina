@@ -5,7 +5,6 @@ changeImage('second1', './assets/img/article/mong-kok-minibus.jpg');
 changeImage('second2', './assets/img/article/nicon-deco.png');
 
 function titi (){
-    let taille = document.getElementById('slide').style.maxHeight;
     if (i == 0) {
         hauteur = document.getElementById('format').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
@@ -29,27 +28,42 @@ previous.addEventListener("click", function () {
     i--
     titi();
     let str = i * 33.33
-    slide.style.transform= `translateX(-${str}%)`
     if (i > 1){
         previous.disabled = false
-    }else if (i == 3){
-        next.disabled = true
+    }if(i < 2 ){
+        next.disabled = false
+    }if (i == 0) {
+        previous.disabled= true
     }
+    if (i < 0){
+        previous.disabled= true
+        return
+    }
+    slide.style.transform= `translateX(-${str}%)`
 
-    console.log(slide.style.transform);
+    console.log(i);
 })
 
 next.addEventListener("click",function (){
+
     i++
     titi();
     let str = i * 33.33
-    slide.style.transform = `translateX(-${str}%)`
-    if (i > 1 ){
-        previous.disabled = false;
-
+    if (i == 2){
+        next.disabled = true;
     }
-    console.log(slide.style.transform);
-
+    if (i > 2) {
+        i--
+        next.disabled = true;
+        return
+    }
+    if (i > 0 ){
+        previous.disabled = false;
+        
+    }
+    slide.style.transform = `translateX(-${str}%)`
+    console.log(i);
+    
 } )
 
 titi();

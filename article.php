@@ -85,7 +85,7 @@ $prix = 84;
                             <?php foreach ($formats as $key => $format) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
-                                        <figure>
+                                        <figure class="image-option">
                                             <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
                                         </figure>
                                     </div>
@@ -108,7 +108,7 @@ $prix = 84;
                             <?php foreach ($finitions as $finition) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
-                                        <figure>
+                                        <figure class="image-option">
                                             <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
                                         </figure>
                                     </div>
@@ -129,7 +129,7 @@ $prix = 84;
                             <?php foreach ($cadres as $cadre) { ?>
                                 <div class="formatGrand option">
                                     <div class="image">
-                                        <figure>
+                                        <figure class="image-option">
                                             <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
                                         </figure>
                                     </div>
