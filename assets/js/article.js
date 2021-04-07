@@ -36,6 +36,7 @@ previous.addEventListener("click", function () {
         previous.disabled= true
     }
     if (i < 0){
+        i++
         previous.disabled= true
         return
     }
