@@ -4,17 +4,20 @@ const changeImage = (id, lien) => {
 changeImage('second1', './assets/img/article/mong-kok-minibus.jpg');
 changeImage('second2', './assets/img/article/nicon-deco.png');
 
-function titi (){
+function mouv(){
     if (i == 0) {
         hauteur = document.getElementById('format').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
+        document.getElementById('addProduct').style.visibility = "hidden";
     }else if (i == 1){
         hauteur = document.getElementById('finition').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
+        document.getElementById('addProduct').style.visibility = "hidden";
     }
     else if(i == 2){
         hauteur = document.getElementById('cadre').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
+        document.getElementById('addProduct').style.visibility = "visible";
     }
 }
 
@@ -26,7 +29,7 @@ let slide = document.getElementById('slide');
 
 previous.addEventListener("click", function () {
     i--
-    titi();
+    mouv();
     let str = i * 33.33
     if (i > 1){
         previous.disabled = false
@@ -48,7 +51,7 @@ previous.addEventListener("click", function () {
 next.addEventListener("click",function (){
 
     i++
-    titi();
+    mouv();
     let str = i * 33.33
     if (i == 2){
         next.disabled = true;
@@ -67,5 +70,21 @@ next.addEventListener("click",function (){
     
 } )
 
-titi();
+// function check (element) {
+//     let log = document.getElementById(element)
+//     console.log(log);
+// }
+mouv();
+
+
+
+let test = document.querySelector('input[name="format"]');
+
+test.addEventListener('click',  () => {
+    console.log("salut");
+})
+console.log(test)
+
+// check("Classique")
+
 

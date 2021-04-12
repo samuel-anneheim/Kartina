@@ -219,3 +219,11 @@ figure {
         border: none;
     }
 }
+
+#addProduct{
+    visibility: hidden;
+    
+    &:focus{
+        outline: hidden;
+    }
+}
