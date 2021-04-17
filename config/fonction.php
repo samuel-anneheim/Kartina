@@ -15,6 +15,14 @@ function accents($prenom, $nom) {
     return $name;
 };
 
+function email_space($email){
+
+    $email = str_replace(" ", "", $email);
+
+    return $email;
+
+}
+
 function reduction($chaine, $max) {
 
     if (strlen($chaine) >= $max) {

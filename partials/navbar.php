@@ -26,7 +26,7 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-    <title><?= $title ?></title>
+    <title><?php echo "kartina "; if (isset($title)) {echo "| ".$title; }?></title>
 </head>
 
 <body>
@@ -55,7 +55,7 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
                     </div>
 
                     <div class="help">
-                        <a href="./help.php"> Nous contacter</a>
+                        <a href="./helpS.php"> Nous contacter</a>
                     </div>
 
                     <div class="panier">
