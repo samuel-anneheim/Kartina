@@ -8,7 +8,7 @@ $civilite = $_POST['genre'] ?? '';
 $nom = htmlspecialchars($_POST['nom'] ?? '');
 $prenom = htmlspecialchars($_POST['prenom'] ?? '');
 $email = htmlspecialchars(email_space($_POST['email']) ?? '');
-$sujet = $_POST['sujet'] ?? '';
+$sujet = htmlspecialchars($_POST['sujet'] ?? '');
 $tel = htmlspecialchars($_POST['tel'] ?? null);
 $message = htmlspecialchars($_POST['message'] ?? '');
 
@@ -29,10 +29,8 @@ if (!empty($_POST)) {
         $errors['email'] = "Veuillez rentrer une adresse email valide";
     }
 
-    if ($sujet == 'Aide pour commander' || 'Après-vente, échange et retour' || 'problème technique' || 'Autres sujets') {
-        
-    }else if ($sujet){
-        $errors["sujet"] = "Choisissez un sujet valide";
+    if (($sujet !== 'Aide pour commander') && ($sujet !== 'Après-vente, échange et retour') && ($sujet !== 'problème technique') && ($sujet !== 'Autres sujets')) {
+        $errors["sujet"] = "choisissez un sujet valide";
     }
 
     if (iconv_strlen($message) < 15) {
