@@ -70,21 +70,21 @@ next.addEventListener("click",function (){
     
 } )
 
-// function check (element) {
-//     let log = document.getElementById(element)
-//     console.log(log);
-// }
 mouv();
 
 
 
-let test = document.querySelector('input[name="format"]');
-
-test.addEventListener('click',  () => {
-    console.log("salut");
-})
-console.log(test)
-
-// check("Classique")
+let test = document.querySelector('input[value="Classique"]');
+test = test.dataset.prix;
+console.log(test);
 
 
+let formatTable = ["Classique", "Grand", "Géant", "Collector"];
+
+for (const e in formatTable) {
+    let element = document.getElementById(e)
+    element.addEventListener('click',function () {
+        console.log(element);
+        element.style.background = 'blue';
+    }) 
+}

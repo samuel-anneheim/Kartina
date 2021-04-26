@@ -4,7 +4,23 @@ $stylesheet = './assets/css/article/article.css';
 $title = 'Article';
 require __DIR__ . './partials/navbar.php';
 
+$id = $_GET['id'] ?? 0;
+
+
+
 global $db;
+
+$query = $db->prepare('SELECT * FROM oeuvre where id = :id');
+$query->bindValue(':id', $id);
+$query->execute();
+$oeuvre = $query->fetch();
+
+
+$query = $db->prepare('SELECT * FROM user WHERE id = :id');
+$query->bindValue(':id', $oeuvre['user_id']);
+$query->execute();
+$artiste = $query->fetch();
+
 
 $formats = $db->query('SELECT * FROM format')->fetchAll();
 $finitions = $db->query('SELECT * FROM finition')->fetchAll();
@@ -37,7 +53,7 @@ if (!empty($_POST)) {
 var_dump($_POST);
 var_dump($errors);
 
-
+$name = accents($artiste['prenom'], $artiste['nom']);
 ?>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,12 +66,12 @@ var_dump($errors);
         <section class="presentationArticle">
             <article class="presentationImage">
                 <figure class="grandeImage">
-                    <img src="./assets/img/article/mong-kok-minibus.jpg" alt="" id="imagePrincipal">
+                    <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="imagePrincipal">
                 </figure>
                 <div class="selection-image">
 
                     <figure class="listeImage">
-                        <img src="./assets/img/article/mong-kok-minibus.jpg" alt="" id="second1">
+                        <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="second1">
                         <img src="./assets/img/article/icon-deco.png" alt="" id="second2">
                     </figure>
 
@@ -67,18 +83,9 @@ var_dump($errors);
                     </figure>
                 </div>
                 <article class="descArticle">
-                    <h1>Jöirg Dickmann</h1>
-                    <h2>Mong Kok Minibus</h2>
-                    <p>Né en 1973 à Sauerland, l’artiste Jörg Dickmann s’est installé à Munich dans le sud de l’Allemagne.
-                        Autodidacte, il s’est intéressé à la photographie dès l’enfance, prenant exemple sur son père qui ne
-                        quittait jamais son appareil SLR. Il tirait, à ses débuts, des instantanés pendant ses vacances,
-                        pour le plaisir et sans ambition particulière. Son talent pour la prise de vue et le post traitement
-                        numérique se développent à la fin des années 90. Doté d’un reflex numérique, il commence à diffuser
-                        ses images sur les réseaux sociaux, celles-ci sont ensuite publiées dans divers magazines allemands
-                        (Foto Praxis, Focus ou encore ELLE City). Les thèmes de prédilection de Jörg Dickmann sont les
-                        paysages urbains, les scènes de rue, l’architecture et l’énergie lumineuse. Épris de voyages qu’il
-                        mène aux quatre coins du monde, il réalise principalement des clichés en pose longue en
-                        s’intéressant à richesse chromatique des villes une fois la nuit tombée.</p>
+                    <h1><?= $artiste['prenom'].' '.$artiste['nom']  ?></h1>
+                    <h2><?= $oeuvre['nom'] ?></h2>
+                    <p><?= $oeuvre['description']?></p>
                 </article>
             </article>
 
@@ -187,8 +194,8 @@ var_dump($errors);
         </section>
     </div>
     <script>
-        let prix = <?= $prix ?>;
-        console.log(prix);
+        // let prix = <?= $prix ?>;
+        // console.log(prix);
     </script>
     <script src="./assets/js/article.js"></script>
 </body>

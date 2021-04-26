@@ -12,7 +12,6 @@ $sujet = htmlspecialchars($_POST['sujet'] ?? '');
 $tel = htmlspecialchars($_POST['tel'] ?? null);
 $message = htmlspecialchars($_POST['message'] ?? '');
 
-var_dump($sujet);
 $errors = [];
 
 if (!empty($_POST)) {
@@ -38,7 +37,7 @@ if (!empty($_POST)) {
     }
 }
 
-var_dump($_POST)
+
 
 
 ?>
