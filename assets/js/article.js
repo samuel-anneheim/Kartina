@@ -74,17 +74,51 @@ mouv();
 
 
 
-let test = document.querySelector('input[value="Classique"]');
+let test = document.querySelector('input[value="Collector"]');
 test = test.dataset.prix;
 console.log(test);
 
 
 let formatTable = ["Classique", "Grand", "Géant", "Collector"];
 
-for (const e in formatTable) {
-    let element = document.getElementById(e)
+for (const id of formatTable) {
+    console.log(id);
+    let element = document.getElementById(id);
+    let input = document.getElementById(`format-${id}`);
+
     element.addEventListener('click',function () {
+
+        /**
+         * Changement du style de la div
+         */
+        input.checked = true;
         console.log(element);
         element.style.background = 'blue';
+
+        /**
+         *  enlever les elements inutile au parcours d'achat
+         */
+
+        function invisible(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        if (id == 'Classique') {
+            console.log('c\'est bien classique');
+            invisible("v-Supportaluminium");
+            invisible('v-Supportaluminiumavecverreacrylique');
+            invisible('v-Tiragesurpapierphoto');
+        }else {
+            console.log("cest dif de classique");
+            invisible('v-Blackout');
+            invisible('v-Artshot');
+        }
+
+        /**
+         * Calcul des prix
+         */
+        let alu = document.getElementById('Supportaluminium');
+        input = input.dataset.prix;
+        alu.innerHTML = Math.round(input * 2.6)+'€';
     }) 
 }

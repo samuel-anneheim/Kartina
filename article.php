@@ -26,7 +26,7 @@ $formats = $db->query('SELECT * FROM format')->fetchAll();
 $finitions = $db->query('SELECT * FROM finition')->fetchAll();
 $cadres = $db->query('SELECT * FROM cadre')->fetchAll();
 
-$augmentation = [1, 2, 4, 10];
+$augmentationFormat = [1, 2, 4, 10];
 $prix = 84;
 
 $format = $_POST['format'] ?? '';
@@ -122,7 +122,7 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                                         </div>
                                         <div class="descriptionFormat">
                                             <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
-                                                <span class="prix"><?= ($prix * $augmentation[$key]) ?>€</span>
+                                                <span class="prix"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
                                             </p>
                                             <p><?= $format['description'] ?></p>
                                         </div>
@@ -131,21 +131,22 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                                                 <img src="./assets/img/article/check.png" alt="check">
                                             </figure>
                                         </div>
-                                        <input type="radio" name="format" value="<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentation[$key] ?>">
+                                        <input type="radio" name="format" id="format-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
 
                             <div class="blocFintion" id="finition">
                                 <?php foreach ($finitions as $finition) { ?>
-                                    <div class="formatGrand option">
+                                    <div class="formatGrand option" id="v-<?= email_space($finition['nom']) ?>">
                                         <div class="image">
                                             <figure class="image-option">
                                                 <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
                                             </figure>
                                         </div>
                                         <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span></p>
+                                            <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span> - à partir de 
+                                                <span id="<?= email_space($finition['nom']) ?>"></span></p> 
                                             <p><?= $finition['description'] ?></p>
                                         </div>
                                         <div class="checkOrNot" id="check">
