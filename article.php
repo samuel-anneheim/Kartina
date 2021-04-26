@@ -83,9 +83,9 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                     </figure>
                 </div>
                 <article class="descArticle">
-                    <h1><?= $artiste['prenom'].' '.$artiste['nom']  ?></h1>
+                    <h1><?= $artiste['prenom'] . ' ' . $artiste['nom']  ?></h1>
                     <h2><?= $oeuvre['nom'] ?></h2>
-                    <p><?= $oeuvre['description']?></p>
+                    <p><?= $oeuvre['description'] ?></p>
                 </article>
             </article>
 
@@ -115,23 +115,23 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                             <div class="blocFormat" id="format">
                                 <?php foreach ($formats as $key => $format) { ?>
                                     <div class="formatGrand option" id="<?= $format["nom"] ?>">
-                                        <div class="image">
-                                            <figure class="image-option">
-                                                <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
-                                            </figure>
-                                        </div>
-                                        <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
-                                                <span class="prix"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
-                                            </p>
-                                            <p><?= $format['description'] ?></p>
-                                        </div>
-                                        <div class="checkOrNot" id="check">
-                                            <figure>
-                                                <img src="./assets/img/article/check.png" alt="check">
-                                            </figure>
-                                        </div>
-                                        <input type="radio" name="format" id="format-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>">
+                                            <div class="image">
+                                                <figure class="image-option">
+                                                    <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
+                                                </figure>
+                                            </div>
+                                            <div class="descriptionFormat">
+                                                <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
+                                                    <span class="prix"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
+                                                </p>
+                                                <p><?= $format['description'] ?></p>
+                                            </div>
+                                            <div class="checkOrNot" id="check">
+                                                <figure>
+                                                    <img id="img-<?= $format["nom"] ?>" src="./assets/img/article/check.png" alt="check">
+                                                </figure>
+                                            </div>
+                                            <input type="radio" name="format" id="format-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -145,8 +145,9 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                                             </figure>
                                         </div>
                                         <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span> - à partir de 
-                                                <span id="<?= email_space($finition['nom']) ?>"></span></p> 
+                                            <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span> - à partir de
+                                                <span id="<?= email_space($finition['nom']) ?>"></span>
+                                            </p>
                                             <p><?= $finition['description'] ?></p>
                                         </div>
                                         <div class="checkOrNot" id="check">
