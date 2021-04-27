@@ -6,6 +6,33 @@ const changeImage = (id, lien) => {
 changeImage('second1', './assets/img/article/mong-kok-minibus.jpg');
 changeImage('second2', './assets/img/article/nicon-deco.png');
 
+let formatTable = [
+    "Classique",
+    "Grand",
+    "Géant",
+    "Collector"
+];
+
+let finitionTable = {
+    "Supportaluminium": 2.6,
+    "Supportaluminiumavecverreacrylique": 3.35,
+    "Artshot": 1.4,
+    "Tiragesurpapierphoto": 1,
+    "Blackout": 1
+};
+
+let cadreTable = {
+    'Sansencadrement': 1,
+    'Encadrementnoirsatin': 1.45,
+    "Encadrementblancsatin": 1.45,
+    'Encadrementnoyer': 1.45,
+    'Encadrementchêne': 1.45,
+    'Aluminumnoir': 1,
+    'Boisblanc': 1,
+    'Acajoumat': 1,
+    'Aluminiumbrossé': 1,
+}
+
 function mouv() {
     if (i == 0) {
         hauteur = document.getElementById('format').offsetHeight;
@@ -28,6 +55,10 @@ let next = document.getElementById('next');
 next.disabled = true
 let i = 0;
 let slide = document.getElementById('slide');
+let price = document.getElementById('price');
+let price1;
+let price2;
+let price3;
 
 previous.addEventListener("click", function () {
     i--
@@ -39,6 +70,30 @@ previous.addEventListener("click", function () {
         next.disabled = false
     } if (i == 0) {
         previous.disabled = true
+        price.innerHTML = price1
+        for (const el in finitionTable) {
+            let imgrefresh = document.getElementById(`img-${el}`);
+            imgrefresh.setAttribute('src', 'assets/img/article/check.png')
+    
+            let elementUncheck = document.getElementById(el);
+            elementUncheck.classList.remove('checkIn');
+    
+            let inputValidation = document.getElementById(`input-${el}`);
+            inputValidation.checked = false;
+        }
+    }
+    if (i == 1) {
+        price.innerHTML = price2;
+        for (const el in cadreTable) {
+            let imgrefresh = document.getElementById(`img-${el}`);
+            imgrefresh.setAttribute('src', 'assets/img/article/check.png')
+    
+            let elementUncheck = document.getElementById(el);
+            elementUncheck.classList.remove('checkIn');
+    
+            let inputValidation = document.getElementById(`input-${el}`);
+            inputValidation.checked = false;
+        }
     }
     if (i < 0) {
         i++
@@ -77,33 +132,6 @@ function invisible(id) {
 }
 function initial(id) {
     document.getElementById(id).style.display = "flex";
-}
-
-let formatTable = [
-    "Classique",
-    "Grand",
-    "Géant",
-    "Collector"
-];
-
-let finitionTable = {
-    "Supportaluminium": 2.6,
-    "Supportaluminiumavecverreacrylique": 3.35,
-    "Artshot": 1.4,
-    "Tiragesurpapierphoto": 1,
-    "Blackout": 1
-};
-
-let cadreTable = {
-    'Sansencadrement': 1,
-    'Encadrementnoirsatin': 1.45,
-    "Encadrementblancsatin": 1.45,
-    'Encadrementnoyer': 1.45,
-    'Encadrementchêne': 1.45,
-    'Aluminumnoir': 1,
-    'Boisblanc': 1,
-    'Acajoumat': 1,
-    'Aluminiumbrossé': 1,
 }
 
 for (const id of formatTable) {
@@ -157,8 +185,8 @@ for (const id of formatTable) {
          * Calcul des prix
          */
         let spanAnt = parseInt(document.getElementById(`p-${id}`).dataset.prix);
-        let price = document.getElementById('price');
-        price.innerHTML = spanAnt + '.00€';
+        price1 = spanAnt + '.00€';
+        price.innerHTML = price1
 
         for (const el in finitionTable) {
             let span = document.getElementById(`p-${el}`);
@@ -183,19 +211,6 @@ for (const id of formatTable) {
                     let inputValidation = document.getElementById(`input-${el}`);
                     inputValidation.checked = false;
                 }
-
-                // previous.addEventListener("click", function () {
-                //     for (const el in finitionTable) {
-                //         let imgrefresh = document.getElementById(`img-${el}`);
-                //         imgrefresh.setAttribute('src', 'assets/img/article/check.png')
-    
-                //         let elementUncheck = document.getElementById(el);
-                //         elementUncheck.classList.remove('checkIn');
-    
-                //         let inputValidation = document.getElementById(`input-${el}`);
-                //         inputValidation.checked = false;
-                //     }
-                // })
 
                 for (const el in cadreTable) {
                     initial(el)
@@ -243,7 +258,8 @@ for (const id of formatTable) {
                  * calcul des prix
                  */
                 let spanAnt = parseInt(document.getElementById(`p-${name}`).dataset.prix);
-                price.innerHTML = spanAnt + '.00€';
+                price2 = spanAnt + '.00€';
+                price.innerHTML = price2
 
                 for (const el in cadreTable) {
                     let span = document.getElementById(`p-${el}`);
@@ -281,7 +297,8 @@ for (const id of formatTable) {
                         img.setAttribute('src', 'assets/img/article/checked.png');
 
                         let spanAnt = parseInt(document.getElementById(`p-${name}`).dataset.prix);
-                        price.innerHTML = spanAnt + '.00€';
+                        price3 = spanAnt + '.00€';
+                        price.innerHTML = price3
 
                     })
                 }
