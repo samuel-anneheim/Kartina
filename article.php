@@ -115,47 +115,47 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                             <div class="blocFormat" id="format">
                                 <?php foreach ($formats as $key => $format) { ?>
                                     <div class="formatGrand option" id="<?= $format["nom"] ?>">
-                                            <div class="image">
-                                                <figure class="image-option">
-                                                    <img src="./assets/img/format/<?= $format['image'] ?>" alt="grand format">
-                                                </figure>
-                                            </div>
-                                            <div class="descriptionFormat">
-                                                <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
-                                                    <span class="prix"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
-                                                </p>
-                                                <p><?= $format['description'] ?></p>
-                                            </div>
-                                            <div class="checkOrNot" id="check">
-                                                <figure>
-                                                    <img id="img-<?= $format["nom"] ?>" src="./assets/img/article/check.png" alt="check">
-                                                </figure>
-                                            </div>
-                                            <input type="radio" name="format" id="format-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>">
+                                        <div class="image">
+                                            <figure class="image-option">
+                                                <img src="./assets/img/format/<?= $format['image'] ?>" alt="<?= $format["nom"] ?>">
+                                            </figure>
+                                        </div>
+                                        <div class="descriptionFormat">
+                                            <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
+                                                <span class="prix" id="p-<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
+                                            </p>
+                                            <p><?= $format['description'] ?></p>
+                                        </div>
+                                        <div class="checkOrNot" id="check">
+                                            <figure>
+                                                <img id="img-<?= $format["nom"] ?>" src="./assets/img/article/check.png" alt="check">
+                                            </figure>
+                                        </div>
+                                        <input type="radio" name="format" id="input-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
 
                             <div class="blocFintion" id="finition">
                                 <?php foreach ($finitions as $finition) { ?>
-                                    <div class="formatGrand option" id="v-<?= email_space($finition['nom']) ?>">
+                                    <div class="formatGrand option" id="<?= email_space($finition['nom']) ?>">
                                         <div class="image">
                                             <figure class="image-option">
-                                                <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="grand format">
+                                                <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="<?= $finition['nom'] ?>">
                                             </figure>
                                         </div>
                                         <div class="descriptionFormat">
                                             <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span> - à partir de
-                                                <span id="<?= email_space($finition['nom']) ?>"></span>
+                                                <span id="p-<?= email_space($finition['nom']) ?>"></span>
                                             </p>
                                             <p><?= $finition['description'] ?></p>
                                         </div>
                                         <div class="checkOrNot" id="check">
                                             <figure>
-                                                <img src="./assets/img/article/check.png" alt="check">
+                                                <img id="img-<?= email_space($finition['nom']) ?>" src="./assets/img/article/check.png" alt="check">
                                             </figure>
                                         </div>
-                                        <input type="radio" name="finition" value="<?= $finition['nom'] ?>">
+                                        <input type="radio" id="input-<?= email_space($finition['nom']) ?>" name="finition" value="<?= $finition['nom'] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -163,22 +163,24 @@ $name = accents($artiste['prenom'], $artiste['nom']);
 
                             <div class="blocCadre" id="cadre">
                                 <?php foreach ($cadres as $cadre) { ?>
-                                    <div class="formatGrand option">
+                                    <div class="formatGrand option" id="<?= email_space($cadre['nom']) ?>">
                                         <div class="image">
                                             <figure class="image-option">
                                                 <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
                                             </figure>
                                         </div>
                                         <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span></p>
+                                            <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span> - au prix de
+                                                <span id="p-<?= email_space($cadre['nom']) ?>"></span>
+                                            </p>
                                             <p><?= $cadre['description'] ?></p>
                                         </div>
                                         <div class="checkOrNot" id="check">
                                             <figure>
-                                                <img src="./assets/img/article/check.png" alt="check">
+                                                <img id="img-<?= email_space($cadre['nom']) ?>" src="./assets/img/article/check.png" alt="check">
                                             </figure>
                                         </div>
-                                        <input type="radio" name="cadre" value="<?= $cadre['nom'] ?>">
+                                        <input type="radio" id="input-<?= email_space($cadre['nom']) ?>" name="cadre" value="<?= $cadre['nom'] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -190,6 +192,9 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                 <div class="buttonSelect">
                     <button class="btn" id="previous" disabled>Précédent</button>
                     <button class="btn" id="next">Suivant</button>
+                </div>
+                <div class="price-container">
+                        <b>total <span id="price">0.00€</span> </b>
                 </div>
 
             </article>

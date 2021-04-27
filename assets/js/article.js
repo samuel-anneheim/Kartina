@@ -64,6 +64,7 @@ next.addEventListener("click", function () {
         previous.disabled = false;
     }
     slide.style.transform = `translateX(-${str}%)`
+    next.disabled = true;
 })
 mouv();
 
@@ -71,38 +72,65 @@ mouv();
 /**
  * Transition 
  */
+function invisible(id) {
+    document.getElementById(id).style.display = "none";
+}
+function initial(id) {
+    document.getElementById(id).style.display = "flex";
+}
 
-let formatTable = ["Classique", "Grand", "Géant", "Collector"];
+let formatTable = [
+    "Classique",
+    "Grand",
+    "Géant",
+    "Collector"
+];
+
+let finitionTable = {
+    "Supportaluminium": 2.6,
+    "Supportaluminiumavecverreacrylique": 3.35,
+    "Artshot": 1.4,
+    "Tiragesurpapierphoto": 1,
+    "Blackout": 1
+};
+
+let cadreTable = {
+    'Sansencadrement': 1,
+    'Encadrementnoirsatin': 1.45,
+    "Encadrementblancsatin": 1.45,
+    'Encadrementnoyer': 1.45,
+    'Encadrementchêne': 1.45,
+    'Aluminumnoir': 1,
+    'Boisblanc': 1,
+    'Acajoumat': 1,
+    'Aluminiumbrossé': 1,
+}
 
 for (const id of formatTable) {
 
     let element = document.getElementById(id);
-    
+
     element.addEventListener('click', function () {
 
         next.disabled = false;
-        
-        let input = document.getElementById(`format-${id}`);
+
         for (const id of formatTable) {
             let imgrefresh = document.getElementById(`img-${id}`);
             imgrefresh.setAttribute('src', 'assets/img/article/check.png')
             let elementUncheck = document.getElementById(id);
             elementUncheck.classList.remove('checkIn');
-
-            let inputValidation = document.getElementById(`format-${id}`);
+            let inputValidation = document.getElementById(`input-${id}`);
             inputValidation.checked = false;
         }
-        initial('v-Blackout');
-        initial('v-Artshot');
-        initial("v-Supportaluminium");
-        initial('v-Supportaluminiumavecverreacrylique');
-        initial('v-Tiragesurpapierphoto');
 
-
+        for (const el in finitionTable) {
+            initial(el)
+        }
 
         /**
          * Changement du style de la div
          */
+        let input = document.getElementById(`input-${id}`);
         input.checked = true;
         element.classList.add('checkIn');
 
@@ -111,45 +139,154 @@ for (const id of formatTable) {
          */
         let img = document.getElementById(`img-${id}`);
         img.setAttribute('src', 'assets/img/article/checked.png')
-        
+
 
         /**
          *  enlever les elements inutile au parcours d'achat
          */
-
-        function invisible(id) {
-            document.getElementById(id).style.display = "none";
-        }
-        function initial(id) {
-            document.getElementById(id).style.display = "flex";
-        }
-
         if (id == 'Classique') {
-            console.log('c\'est bien classique');
-            invisible("v-Supportaluminium");
-            invisible('v-Supportaluminiumavecverreacrylique');
-            invisible('v-Tiragesurpapierphoto');
+            invisible("Supportaluminium");
+            invisible('Supportaluminiumavecverreacrylique');
+            invisible('Tiragesurpapierphoto');
         } else {
-            console.log("cest dif de classique");
-            invisible('v-Blackout');
-            invisible('v-Artshot');
+            invisible('Blackout');
+            invisible('Artshot');
         }
 
         /**
          * Calcul des prix
          */
-        let alu = document.getElementById('Supportaluminium');
-        let aluVerre = document.getElementById('Supportaluminiumavecverreacrylique')
-        let tirage = document.getElementById('Tiragesurpapierphoto')
-        let ppNoir = document.getElementById('Blackout')
-        let ppBlanc = document.getElementById('Artshot')
-        
-        input = input.dataset.prix;
+        let spanAnt = parseInt(document.getElementById(`p-${id}`).dataset.prix);
+        let price = document.getElementById('price');
+        price.innerHTML = spanAnt + '.00€';
 
-        alu.innerHTML = Math.round(input * 2.6) + '€';
-        aluVerre.innerHTML = Math.round(input * 3.35)+ '€';
-        tirage.innerHTML = input+ '€';
-        ppNoir.innerHTML = input+ '€';
-        ppBlanc.innerHTML = Math.round(input * 1.4)+ '€';
+        for (const el in finitionTable) {
+            let span = document.getElementById(`p-${el}`);
+            span.innerHTML = Math.round(spanAnt * finitionTable[el]) + '€';
+            span.dataset.prix = Math.round(spanAnt * finitionTable[el]) + '€';
+        }
+
+        for (const name in finitionTable) {
+
+            let element = document.getElementById(name);
+
+            element.addEventListener("click", function () {
+
+                next.disabled = false;
+                for (const el in finitionTable) {
+                    let imgrefresh = document.getElementById(`img-${el}`);
+                    imgrefresh.setAttribute('src', 'assets/img/article/check.png')
+
+                    let elementUncheck = document.getElementById(el);
+                    elementUncheck.classList.remove('checkIn');
+
+                    let inputValidation = document.getElementById(`input-${el}`);
+                    inputValidation.checked = false;
+                }
+
+                // previous.addEventListener("click", function () {
+                //     for (const el in finitionTable) {
+                //         let imgrefresh = document.getElementById(`img-${el}`);
+                //         imgrefresh.setAttribute('src', 'assets/img/article/check.png')
+    
+                //         let elementUncheck = document.getElementById(el);
+                //         elementUncheck.classList.remove('checkIn');
+    
+                //         let inputValidation = document.getElementById(`input-${el}`);
+                //         inputValidation.checked = false;
+                //     }
+                // })
+
+                for (const el in cadreTable) {
+                    initial(el)
+                }
+
+                /**
+                * Changement du style de la div
+                */
+                let input = document.getElementById(`input-${name}`);
+                input.checked = true;
+                element.classList.add('checkIn');
+
+                /**
+                 * Changer la couleur du ckeck
+                 */
+                let img = document.getElementById(`img-${name}`);
+                img.setAttribute('src', 'assets/img/article/checked.png');
+
+                /**
+                *  enlever les elements inutile au parcours d'achat
+                */
+                if ((name == 'Artshot') || (name == 'Blackout')) {
+                    invisible('Sansencadrement');
+                    invisible('Encadrementnoirsatin');
+                    invisible("Encadrementblancsatin");
+                    invisible('Encadrementnoyer');
+                    invisible('Encadrementchêne');
+                } else if ((name == 'Supportaluminium') || (name == 'Supportaluminiumavecverreacrylique')) {
+                    invisible('Aluminumnoir');
+                    invisible('Boisblanc');
+                    invisible('Acajoumat');
+                    invisible('Aluminiumbrossé');
+                } else if (name == "Tiragesurpapierphoto") {
+                    invisible('Encadrementnoirsatin');
+                    invisible("Encadrementblancsatin");
+                    invisible('Encadrementnoyer');
+                    invisible('Encadrementchêne');
+                    invisible('Aluminumnoir');
+                    invisible('Boisblanc');
+                    invisible('Acajoumat');
+                    invisible('Aluminiumbrossé');
+                }
+
+                /**
+                 * calcul des prix
+                 */
+                let spanAnt = parseInt(document.getElementById(`p-${name}`).dataset.prix);
+                price.innerHTML = spanAnt + '.00€';
+
+                for (const el in cadreTable) {
+                    let span = document.getElementById(`p-${el}`);
+                    span.innerHTML = Math.round(spanAnt * cadreTable[el]) + '€';
+                    span.dataset.prix = Math.round(spanAnt * cadreTable[el]) + '€';
+                }
+
+                for (const name in cadreTable) {
+                    let element = document.getElementById(name);
+
+                    element.addEventListener('click', function () {
+
+                        for (const el in cadreTable) {
+                            let imgrefresh = document.getElementById(`img-${el}`);
+                            imgrefresh.setAttribute('src', 'assets/img/article/check.png')
+
+                            let elementUncheck = document.getElementById(el);
+                            elementUncheck.classList.remove('checkIn');
+
+                            let inputValidation = document.getElementById(`input-${el}`);
+                            inputValidation.checked = false;
+                        }
+
+                        /**
+                        * Changement du style de la div
+                        */
+                        let input = document.getElementById(`input-${name}`);
+                        input.checked = true;
+                        element.classList.add('checkIn');
+
+                        /**
+                         * Changer la couleur du ckeck
+                         */
+                        let img = document.getElementById(`img-${name}`);
+                        img.setAttribute('src', 'assets/img/article/checked.png');
+
+                        let spanAnt = parseInt(document.getElementById(`p-${name}`).dataset.prix);
+                        price.innerHTML = spanAnt + '.00€';
+
+                    })
+                }
+            })
+        }
+
     })
 }
