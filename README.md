@@ -6,6 +6,4 @@ Toutes les oeuvres proviennent du site https://www.yellowkorner.com/fr/home.
 Il dispose des droit d'auteur sur les oeuvres ainsi que les artistes mentionné sur le site.
 
 projet réalisé par :
-- Aurélien Ledret
-- Gabriel Soccio
 - Samuel Anneheim
