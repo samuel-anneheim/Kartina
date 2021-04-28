@@ -50,21 +50,32 @@ if (!empty($_POST)) {
 }
 
 
-var_dump($_POST);
-var_dump($errors);
+// var_dump($_POST);
+// var_dump($errors);
 
 $name = accents($artiste['prenom'], $artiste['nom']);
 ?>
 <section class="presentationArticle">
     <article class="presentationImage">
-        <figure class="grandeImage">
+        <figure class="grandeImage" id="img-prince">
             <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="imagePrincipal">
+        </figure>
+        <figure class="superpose-prince" id="fig-superpose-prince">
+            <img src="./assets/img/article/bgc-decor-article.jpg" alt="">
+            <div class="img-superpose-prince" id="bigSuper">
+                <img id="img-superpose-prince" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+            </div>
         </figure>
         <div class="selection-image">
 
             <figure class="listeImage">
                 <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="second1">
-                <img src="./assets/img/article/icon-deco.png" alt="" id="second2">
+                <div class="superpose" id="second2">
+                    <img src="./assets/img/article/bgc-decor-article.jpg" alt="">
+                    <div class="img-superpose" id="minAgr">
+                        <img id="img-superpose"src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+                    </div>
+                </div>
             </figure>
 
             <figure class="aggrandirImage">
@@ -195,6 +206,25 @@ $name = accents($artiste['prenom'], $artiste['nom']);
     </article>
 </section>
 <script src="./assets/js/article.js"></script>
+<script>
+    let figurePrince = document.getElementById("fig-superpose-prince");
+    figurePrince.style.display = "none"
+
+    let imgPrince = document.getElementById("img-prince");
+
+    let image1 = document.getElementById('second1');
+    image1.addEventListener('click', function () {
+        figurePrince.style.display = "none";
+        imgPrince.style.display = "flex"
+    })
+
+    let image2 = document.getElementById('second2');
+    image2.addEventListener('click', function () {
+        figurePrince.style.display = "flex";
+        imgPrince.style.display = "none"
+    })
+</script>
+
 
 <?php
 

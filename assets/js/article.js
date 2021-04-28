@@ -1,16 +1,8 @@
-const changeImage = (id, lien) => {
-    document.getElementById(`${id}`).addEventListener('click', function () {
-        document.getElementById('imagePrincipal').setAttribute('src', lien)
-    });
-}
-changeImage('second1', './assets/img/article/mong-kok-minibus.jpg');
-changeImage('second2', './assets/img/article/nicon-deco.png');
-
 let formatTable = {
-    "Classique" : "classique.png",
-    "Grand" : "grand.png",
-    "Géant" : "geant.png",
-    "Collector" : "collector.png"
+    "Classique": "classique.png",
+    "Grand": "grand.png",
+    "Géant": "geant.png",
+    "Collector": "collector.png"
 };
 
 let finitionTable = {
@@ -48,8 +40,8 @@ let cadreTableBg = {
     'Encadrementnoyer': "encaNoyer.jpeg",
     'Encadrementchêne': "encaChene.jpeg",
     'Aluminumnoir': "aluNoir.jpeg",
-    'Boisblanc': "bisBlanc.jpeg",
-    'Acajoumat': "acajoutMat.jpeg",
+    'Boisblanc': "boisBlanc.jpeg",
+    'Acajoumat': "acajouMat.jpeg",
     'Aluminiumbrossé': "aluBrosse.jpeg",
 }
 
@@ -82,7 +74,11 @@ let price2;
 let price3;
 let bgFormat = document.getElementById('bg-format');
 let bgFinition = document.getElementById('bg-finition');
-let bgCadre = document.getElementById('bg-cadre')
+let imgPrince2 = document.getElementById('imagePrincipal');
+let bgCadre = document.getElementById('bg-cadre');
+let borderImgPrin = document.getElementById('img-superpose-prince');
+console.log(borderImgPrin);
+let borderImg = document.getElementById('img-superpose');
 
 previous.addEventListener("click", function () {
     i--
@@ -98,10 +94,10 @@ previous.addEventListener("click", function () {
         for (const el in finitionTable) {
             let imgrefresh = document.getElementById(`img-${el}`);
             imgrefresh.setAttribute('src', 'assets/img/article/check.png')
-    
+
             let elementUncheck = document.getElementById(el);
             elementUncheck.classList.remove('checkIn');
-    
+
             let inputValidation = document.getElementById(`input-${el}`);
             inputValidation.checked = false;
         }
@@ -113,15 +109,18 @@ previous.addEventListener("click", function () {
         for (const el in cadreTable) {
             let imgrefresh = document.getElementById(`img-${el}`);
             imgrefresh.setAttribute('src', 'assets/img/article/check.png')
-    
+
             let elementUncheck = document.getElementById(el);
             elementUncheck.classList.remove('checkIn');
-    
+
             let inputValidation = document.getElementById(`input-${el}`);
             inputValidation.checked = false;
         }
         bgCadre.style.background = "";
         document.getElementById('sC').innerHTML = '3';
+        borderImg.style.border = `none`;
+        borderImgPrin.style.border = `none`;
+        imgPrince2.style.border = `none`
     }
     if (i < 0) {
         i++
@@ -189,6 +188,39 @@ for (const id in formatTable) {
         let input = document.getElementById(`input-${id}`);
         input.checked = true;
         element.classList.add('checkIn');
+
+        /**
+         * Changer la miniature en fonctionde la taille
+         */
+
+        let imgSuperMin = document.getElementById('minAgr');
+        if (id == 'Classique') {
+            imgSuperMin.style.height = '25%'
+        }
+        if (id == 'Grand') {
+            imgSuperMin.style.height = '30%'
+        }
+        if (id == 'Géant') {
+            imgSuperMin.style.height = '38%'
+        }
+        if (id == 'Collector') {
+            imgSuperMin.style.height = '50%'
+        }
+
+        let imgSuper = document.getElementById('bigSuper')
+        if (id == 'Classique') {
+            imgSuper.style.height = '25%'
+        }
+        if (id == 'Grand') {
+            imgSuper.style.height = '30%'
+        }
+        if (id == 'Géant') {
+            imgSuper.style.height = '38%'
+        }
+        if (id == 'Collector') {
+            imgSuper.style.height = '50%'
+        }
+
 
         /**
          * Changer la couleur du ckeck
@@ -330,6 +362,31 @@ for (const id in formatTable) {
                             inputValidation.checked = false;
                         }
 
+                        /**
+                         * Gestion des cadres
+                         */
+                        function Transform_border(el, color) {
+                            if (name == el) {
+                                borderImg.style.border = `ridge 3px ${color}`;
+                                borderImgPrin.style.border = `ridge 6px ${color}`;
+                                imgPrince2.style.border = `ridge 8px ${color}`;
+                            }
+                        }
+                        if (name == 'Sansencadrement' ) {
+                            borderImg.style.border = `none`;
+                            borderImgPrin.style.border = `none`;
+                            imgPrince2.style.border = `none`;
+                        }
+
+                        Transform_border('Encadrementnoirsatin', '#1E1D21');
+                        Transform_border("Encadrementblancsatin", '#E5E7E8');
+                        Transform_border('Encadrementnoyer', '#8B6852');
+                        Transform_border('Encadrementchêne', '#D3C1A9');
+                        Transform_border('Aluminumnoir', '#181214');
+                        Transform_border('Boisblanc', '#E8E8E8');
+                        Transform_border('Acajoumat', "#785137");
+                        Transform_border('Aluminiumbrossé', '#D3CDCB');
+
 
 
                         /**
@@ -352,8 +409,8 @@ for (const id in formatTable) {
 
                         for (const i in cadreTableBg) {
                             if (name == i) {
-                                bgCadre.style.background = `URL('assets/img/cadre/${cadreTableBg[i]}')center no-repeat`;
-                                bgCadre.style.backgroundSize = 'cover';
+                                bgCadre.style.background = `URL('assets/img/cadre/${cadreTableBg[i]}')center no-repeat, #fff`;
+                                bgCadre.style.backgroundSize = '95%';
                                 document.getElementById('sC').innerHTML = ''
                             }
                         }
