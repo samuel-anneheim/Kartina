@@ -55,156 +55,149 @@ var_dump($errors);
 
 $name = accents($artiste['prenom'], $artiste['nom']);
 ?>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./assets/css/article.css">
-<title>Article</title>
-</head>
+<section class="presentationArticle">
+    <article class="presentationImage">
+        <figure class="grandeImage">
+            <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="imagePrincipal">
+        </figure>
+        <div class="selection-image">
 
-<body>
-    <div class="container">
-        <section class="presentationArticle">
-            <article class="presentationImage">
-                <figure class="grandeImage">
-                    <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="imagePrincipal">
-                </figure>
-                <div class="selection-image">
+            <figure class="listeImage">
+                <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="second1">
+                <img src="./assets/img/article/icon-deco.png" alt="" id="second2">
+            </figure>
 
-                    <figure class="listeImage">
-                        <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="second1">
-                        <img src="./assets/img/article/icon-deco.png" alt="" id="second2">
-                    </figure>
+            <figure class="aggrandirImage">
+                <img src="./assets/img/article/expand.png" alt="">
+                <figcaption>
+                    <p>Plein écran</p>
+                </figcaption>
+            </figure>
+        </div>
+        <article class="descArticle">
+            <h1><?= $artiste['prenom'] . ' ' . $artiste['nom']  ?></h1>
+            <h2><?= $oeuvre['nom'] ?></h2>
+            <p><?= $oeuvre['description'] ?></p>
+        </article>
+    </article>
 
-                    <figure class="aggrandirImage">
-                        <img src="./assets/img/article/expand.png" alt="">
-                        <figcaption>
-                            <p>Plein écran</p>
-                        </figcaption>
-                    </figure>
+    <article class="parcourDAchat">
+        <div class="blocHaut">
+            <h2>Créez votre photographies d'art sur mesure</h2>
+            <div class="catAchat">
+                <div class="format">
+                    <div class="logo-format" id="bg-format"><span id="sF">1</span></div>
+                    <p>Format</p>
                 </div>
-                <article class="descArticle">
-                    <h1><?= $artiste['prenom'] . ' ' . $artiste['nom']  ?></h1>
-                    <h2><?= $oeuvre['nom'] ?></h2>
-                    <p><?= $oeuvre['description'] ?></p>
-                </article>
-            </article>
+                <div class="finition">
+                    <div class="logo-finition" id="bg-finition"><span id="sFi">2</span></div>
+                    <p>Finition</p>
+                </div>
+                <div class="cadre">
+                    <div class="logo-cadre" id="bg-cadre"><span id="sC">3</span></div>
+                    <p>cadre</p>
+                </div>
+            </div>
+        </div>
 
-            <article class="parcourDAchat">
-                <div class="blocHaut">
-                    <h2>Créez votre photographies d'art sur mesure</h2>
-                    <div class="catAchat">
-                        <div class="format">
-                            <div class="logo-format"><span>1</span></div>
-                            <p>Format</p>
+        <form action="" method="POST">
+            <div class="globalOption">
+
+                <div class="containerOption">
+
+                    <div class="blocOption" id="slide">
+                        <div class="blocFormat" id="format">
+                            <?php foreach ($formats as $key => $format) { ?>
+                                <div class="formatGrand option" id="<?= $format["nom"] ?>">
+                                    <div class="image">
+                                        <figure class="image-option">
+                                            <img src="./assets/img/format/<?= $format['image'] ?>" alt="<?= $format["nom"] ?>">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"><b><?= mb_strtoupper($format['nom']) ?></b></span> - <?= $format['dimension'] ?> à partir de
+                                            <span class="prix" id="p-<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
+                                        </p>
+                                        <p><?= $format['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img id="img-<?= $format["nom"] ?>" src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
+                                    <input type="radio" name="format" id="input-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>">
+                                </div>
+                            <?php } ?>
                         </div>
-                        <div class="finition">
-                            <div class="logo-finition"><span>2</span></div>
-                            <p>Finition</p>
+
+                        <div class="blocFintion" id="finition">
+                            <?php foreach ($finitions as $finition) { ?>
+                                <div class="formatGrand option" id="<?= email_space($finition['nom']) ?>">
+                                    <div class="image">
+                                        <figure class="image-option">
+                                            <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="<?= $finition['nom'] ?>">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"><b><?= mb_strtoupper($finition['nom']) ?></b></span> - à partir de
+                                            <span id="p-<?= email_space($finition['nom']) ?>"></span>
+                                        </p>
+                                        <p><?= $finition['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img id="img-<?= email_space($finition['nom']) ?>" src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
+                                    <input type="radio" id="input-<?= email_space($finition['nom']) ?>" name="finition" value="<?= $finition['nom'] ?>">
+                                </div>
+                            <?php } ?>
                         </div>
-                        <div class="cadre">
-                            <div class="logo-cadre"><span>3</span></div>
-                            <p>cadre</p>
+
+
+                        <div class="blocCadre" id="cadre">
+                            <?php foreach ($cadres as $cadre) { ?>
+                                <div class="formatGrand option" id="<?= email_space($cadre['nom']) ?>">
+                                    <div class="image">
+                                        <figure class="image-option">
+                                            <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
+                                        </figure>
+                                    </div>
+                                    <div class="descriptionFormat">
+                                        <p><span class="format"><b><?= mb_strtoupper($cadre['nom']) ?></b></span> - au prix de
+                                            <span id="p-<?= email_space($cadre['nom']) ?>"></span>
+                                        </p>
+                                        <p><?= $cadre['description'] ?></p>
+                                    </div>
+                                    <div class="checkOrNot" id="check">
+                                        <figure>
+                                            <img id="img-<?= email_space($cadre['nom']) ?>" src="./assets/img/article/check.png" alt="check">
+                                        </figure>
+                                    </div>
+                                    <input type="radio" id="input-<?= email_space($cadre['nom']) ?>" name="cadre" value="<?= $cadre['nom'] ?>">
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
+                    <!-- ajouter un bouton pour envoyer le formulaire -->
                 </div>
-
-                <form action="" method="POST">
-                    <div class="containerOption">
-
-                        <div class="blocOption" id="slide">
-                            <div class="blocFormat" id="format">
-                                <?php foreach ($formats as $key => $format) { ?>
-                                    <div class="formatGrand option" id="<?= $format["nom"] ?>">
-                                        <div class="image">
-                                            <figure class="image-option">
-                                                <img src="./assets/img/format/<?= $format['image'] ?>" alt="<?= $format["nom"] ?>">
-                                            </figure>
-                                        </div>
-                                        <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($format['nom']) ?></span> - <?= $format['dimension'] ?> à partir de
-                                                <span class="prix" id="p-<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
-                                            </p>
-                                            <p><?= $format['description'] ?></p>
-                                        </div>
-                                        <div class="checkOrNot" id="check">
-                                            <figure>
-                                                <img id="img-<?= $format["nom"] ?>" src="./assets/img/article/check.png" alt="check">
-                                            </figure>
-                                        </div>
-                                        <input type="radio" name="format" id="input-<?= $format["nom"] ?>" value="<?= $format["nom"] ?>">
-                                    </div>
-                                <?php } ?>
-                            </div>
-
-                            <div class="blocFintion" id="finition">
-                                <?php foreach ($finitions as $finition) { ?>
-                                    <div class="formatGrand option" id="<?= email_space($finition['nom']) ?>">
-                                        <div class="image">
-                                            <figure class="image-option">
-                                                <img src="./assets/img/finition/<?= $finition['image'] ?>" alt="<?= $finition['nom'] ?>">
-                                            </figure>
-                                        </div>
-                                        <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($finition['nom']) ?></span> - à partir de
-                                                <span id="p-<?= email_space($finition['nom']) ?>"></span>
-                                            </p>
-                                            <p><?= $finition['description'] ?></p>
-                                        </div>
-                                        <div class="checkOrNot" id="check">
-                                            <figure>
-                                                <img id="img-<?= email_space($finition['nom']) ?>" src="./assets/img/article/check.png" alt="check">
-                                            </figure>
-                                        </div>
-                                        <input type="radio" id="input-<?= email_space($finition['nom']) ?>" name="finition" value="<?= $finition['nom'] ?>">
-                                    </div>
-                                <?php } ?>
-                            </div>
-
-
-                            <div class="blocCadre" id="cadre">
-                                <?php foreach ($cadres as $cadre) { ?>
-                                    <div class="formatGrand option" id="<?= email_space($cadre['nom']) ?>">
-                                        <div class="image">
-                                            <figure class="image-option">
-                                                <img src="./assets/img/cadre/<?= $cadre['image'] ?>" alt="grand format">
-                                            </figure>
-                                        </div>
-                                        <div class="descriptionFormat">
-                                            <p><span class="format"> <?= mb_strtoupper($cadre['nom']) ?></span> - au prix de
-                                                <span id="p-<?= email_space($cadre['nom']) ?>"></span>
-                                            </p>
-                                            <p><?= $cadre['description'] ?></p>
-                                        </div>
-                                        <div class="checkOrNot" id="check">
-                                            <figure>
-                                                <img id="img-<?= email_space($cadre['nom']) ?>" src="./assets/img/article/check.png" alt="check">
-                                            </figure>
-                                        </div>
-                                        <input type="radio" id="input-<?= email_space($cadre['nom']) ?>" name="cadre" value="<?= $cadre['nom'] ?>">
-                                    </div>
-                                <?php } ?>
-                            </div>
-                        </div>
-                        <!-- ajouter un bouton pour envoyer le formulaire -->
-                    </div>
-                    <button id="addProduct">send</button>
-                </form>
+                <button class="sendButton " id="addProduct">Commander</button>
                 <div class="buttonSelect">
-                    <button class="btn" id="previous" disabled>Précédent</button>
-                    <button class="btn" id="next">Suivant</button>
+                    <button type="button" class="btn" id="previous" disabled>Précédent</button>
+                    <button type="button" class="btn" id="next">Suivant</button>
                 </div>
-                <div class="price-container">
-                        <b>total <span id="price">0.00€</span> </b>
-                </div>
+            </div>
+        </form>
+        <div class="price-container">
+            <b>total <span id="price">0.00€</span> </b>
+        </div>
 
-            </article>
-        </section>
-    </div>
-    <script>
-        // let prix = <?= $prix ?>;
-        // console.log(prix);
-    </script>
-    <script src="./assets/js/article.js"></script>
-</body>
+    </article>
+</section>
+<script src="./assets/js/article.js"></script>
 
-</html>
+<?php
+
+require './partials/footer.php';
+
+?>

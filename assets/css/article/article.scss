@@ -119,9 +119,11 @@ body {
                         }
                     }
                 }
-
-                div.containerOption {
+                div.globalOption{
                     width: 95%;
+            
+                div.containerOption {
+                    width: 100%;
                     border-left: 1px solid #6C6C6C;
                     border-right: 1px solid #6C6C6C;
                     border-top: 1px solid #6C6C6C;
@@ -139,11 +141,11 @@ body {
                         height: auto;
 
                         .image-option {
-                            height: 150px;
-                            width: 150px;
+                            height: 100px;
+                            width: 100px;
                             img {
-                                width: 150px;
-                                height: 150px;
+                                width: 100px;
+                                height: 100px;
                                 object-fit: contain;
                             }
                         }
@@ -164,16 +166,17 @@ body {
                                 max-height: 150px;
 
                                 div.image {
-                                    width: 25%;
+                                    width: 10%;
                                 }
 
                                 div.descriptionFormat {
-                                    width: 50%;
+                                    width: 80%;
                                     text-align: center;
+                                    font-size: 14px;
                                 }
 
                                 div.checkOrNot {
-                                    width: 25%;
+                                    width: 5%;
                                     height: 50px;
                                     position: relative;
 
@@ -189,14 +192,49 @@ body {
 
                     }
                 }
+                button.sendButton{
+                    box-sizing: content-box;
+                    width: 98.8%;
+                    margin: 10px auto 0;
+                    height: 70px;
+                    max-height: 70px;
+                    background: #e84855;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: none;
+                    font-size: 25px;
+                    color:#fff;
+                    transition: all 500ms;
+
+                    &:hover{
+                        font-size: 27px;
+                        box-shadow: black 0px 0px 4px;
+                    }
+                }
+                .buttonSelect{
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: 10px auto;
+                
+                    button{
+                        height: 50px;
+                        width: 50%;
+                        margin: 10px;
+                        border: 1px solid #6C6C6C;
+
+                    }
+                }
+            }
 
                 div.price-container{
                     width: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    margin-bottom: 10px;
                 }
-
             }
 
             article.descArticle {
@@ -214,26 +252,6 @@ figure {
     margin: 0;
 }
 
-.buttonSelect{
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin: 10px auto;
-
-    button{
-        height: 40px;
-        width: 120px;
-        border: none;
-    }
-}
-
-#addProduct{
-    visibility: hidden;
-    
-    &:focus{
-        outline: hidden;
-    }
-}
 
 input{
     display: none;

@@ -6,12 +6,12 @@ const changeImage = (id, lien) => {
 changeImage('second1', './assets/img/article/mong-kok-minibus.jpg');
 changeImage('second2', './assets/img/article/nicon-deco.png');
 
-let formatTable = [
-    "Classique",
-    "Grand",
-    "Géant",
-    "Collector"
-];
+let formatTable = {
+    "Classique" : "classique.png",
+    "Grand" : "grand.png",
+    "Géant" : "geant.png",
+    "Collector" : "collector.png"
+};
 
 let finitionTable = {
     "Supportaluminium": 2.6,
@@ -20,6 +20,14 @@ let finitionTable = {
     "Tiragesurpapierphoto": 1,
     "Blackout": 1
 };
+
+let finitionTableBg = {
+    "Supportaluminium": "aluminium.jpeg",
+    "Supportaluminiumavecverreacrylique": "acrylique.jpeg",
+    "Artshot": 'artshot.jpeg',
+    "Tiragesurpapierphoto": "papier.jpeg",
+    "Blackout": "blackout.jpeg",
+}
 
 let cadreTable = {
     'Sansencadrement': 1,
@@ -33,20 +41,33 @@ let cadreTable = {
     'Aluminiumbrossé': 1,
 }
 
+let cadreTableBg = {
+    'Sansencadrement': "sansEncad.jpeg",
+    'Encadrementnoirsatin': "encadNoirSatin.jpeg",
+    "Encadrementblancsatin": "encaBlancSatin.jpeg",
+    'Encadrementnoyer': "encaNoyer.jpeg",
+    'Encadrementchêne': "encaChene.jpeg",
+    'Aluminumnoir': "aluNoir.jpeg",
+    'Boisblanc': "bisBlanc.jpeg",
+    'Acajoumat': "acajoutMat.jpeg",
+    'Aluminiumbrossé': "aluBrosse.jpeg",
+}
+
 function mouv() {
     if (i == 0) {
         hauteur = document.getElementById('format').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
-        document.getElementById('addProduct').style.visibility = "hidden";
+        document.getElementById('addProduct').style.display = "none";
     } else if (i == 1) {
         hauteur = document.getElementById('finition').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
-        document.getElementById('addProduct').style.visibility = "hidden";
+        document.getElementById('addProduct').style.display = "none";
     }
     else if (i == 2) {
         hauteur = document.getElementById('cadre').offsetHeight;
         document.getElementById('slide').style.maxHeight = `${hauteur}px`;
-        document.getElementById('addProduct').style.visibility = "visible";
+        document.getElementById('addProduct').style.display = "flex";
+        document.getElementById('addProduct').disabled = true;
     }
 }
 
@@ -59,6 +80,9 @@ let price = document.getElementById('price');
 let price1;
 let price2;
 let price3;
+let bgFormat = document.getElementById('bg-format');
+let bgFinition = document.getElementById('bg-finition');
+let bgCadre = document.getElementById('bg-cadre')
 
 previous.addEventListener("click", function () {
     i--
@@ -81,6 +105,8 @@ previous.addEventListener("click", function () {
             let inputValidation = document.getElementById(`input-${el}`);
             inputValidation.checked = false;
         }
+        bgFinition.style.background = "";
+        document.getElementById('sFi').innerHTML = '2';
     }
     if (i == 1) {
         price.innerHTML = price2;
@@ -94,6 +120,8 @@ previous.addEventListener("click", function () {
             let inputValidation = document.getElementById(`input-${el}`);
             inputValidation.checked = false;
         }
+        bgCadre.style.background = "";
+        document.getElementById('sC').innerHTML = '3';
     }
     if (i < 0) {
         i++
@@ -134,7 +162,7 @@ function initial(id) {
     document.getElementById(id).style.display = "flex";
 }
 
-for (const id of formatTable) {
+for (const id in formatTable) {
 
     let element = document.getElementById(id);
 
@@ -142,7 +170,7 @@ for (const id of formatTable) {
 
         next.disabled = false;
 
-        for (const id of formatTable) {
+        for (const id in formatTable) {
             let imgrefresh = document.getElementById(`img-${id}`);
             imgrefresh.setAttribute('src', 'assets/img/article/check.png')
             let elementUncheck = document.getElementById(id);
@@ -166,7 +194,18 @@ for (const id of formatTable) {
          * Changer la couleur du ckeck
          */
         let img = document.getElementById(`img-${id}`);
-        img.setAttribute('src', 'assets/img/article/checked.png')
+        img.setAttribute('src', 'assets/img/article/checked.png');
+
+        /**
+         * Mettre le bg au cercle
+         */
+        for (const i in formatTable) {
+            if (id == i) {
+                bgFormat.style.background = `URL('assets/img/format/${formatTable[i]}')center no-repeat, #fff`;
+                bgFormat.style.backgroundSize = '90%';
+                document.getElementById('sF').innerHTML = ''
+            }
+        }
 
 
         /**
@@ -229,6 +268,14 @@ for (const id of formatTable) {
                 let img = document.getElementById(`img-${name}`);
                 img.setAttribute('src', 'assets/img/article/checked.png');
 
+                for (const i in finitionTableBg) {
+                    if (name == i) {
+                        bgFinition.style.background = `URL('assets/img/finition/${finitionTableBg[i]}')center no-repeat`;
+                        bgFinition.style.backgroundSize = 'cover';
+                        document.getElementById('sFi').innerHTML = ''
+                    }
+                }
+
                 /**
                 *  enlever les elements inutile au parcours d'achat
                 */
@@ -283,12 +330,15 @@ for (const id of formatTable) {
                             inputValidation.checked = false;
                         }
 
+
+
                         /**
                         * Changement du style de la div
                         */
                         let input = document.getElementById(`input-${name}`);
                         input.checked = true;
                         element.classList.add('checkIn');
+                        document.getElementById('addProduct').disabled = false;
 
                         /**
                          * Changer la couleur du ckeck
@@ -298,12 +348,19 @@ for (const id of formatTable) {
 
                         let spanAnt = parseInt(document.getElementById(`p-${name}`).dataset.prix);
                         price3 = spanAnt + '.00€';
-                        price.innerHTML = price3
+                        price.innerHTML = price3;
+
+                        for (const i in cadreTableBg) {
+                            if (name == i) {
+                                bgCadre.style.background = `URL('assets/img/cadre/${cadreTableBg[i]}')center no-repeat`;
+                                bgCadre.style.backgroundSize = 'cover';
+                                document.getElementById('sC').innerHTML = ''
+                            }
+                        }
 
                     })
                 }
             })
         }
-
     })
 }
