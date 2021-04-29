@@ -7,7 +7,7 @@ require __DIR__ . './partials/navbar.php';
 $civilite = $_POST['genre'] ?? '';
 $nom = htmlspecialchars($_POST['nom'] ?? '');
 $prenom = htmlspecialchars($_POST['prenom'] ?? '');
-$email = htmlspecialchars(email_space($_POST['email']) ?? '');
+$email = htmlspecialchars(email_space($_POST['email'] ?? ''));
 $sujet = htmlspecialchars($_POST['sujet'] ?? '');
 $tel = htmlspecialchars($_POST['tel'] ?? null);
 $message = htmlspecialchars($_POST['message'] ?? '');

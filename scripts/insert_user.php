@@ -20,7 +20,9 @@ $users = [
 
 ];
 
-
+$db->query('SET FOREIGN_KEY_CHECKS = 0');
+$db->query('TRUNCATE user');
+$db->query('SET FOREIGN_KEY_CHECKS = 1');
 
 foreach ($users as $user ) {
     $query =  $db->prepare("INSERT INTO user (email, civilite, nom, prenom, pwd, telephone, isArtiste, presentation, facebook, instagram, pinterest, twitter)
@@ -29,7 +31,7 @@ foreach ($users as $user ) {
     $query->bindValue(":civilite", $user[1]);
     $query->bindValue(":nom", $user[2]);
     $query->bindValue(":prenom", $user[3]);
-    $query->bindValue(":pwd", $user[4]);
+    $query->bindValue(":pwd", password_hash($user[4], PASSWORD_DEFAULT));
     $query->bindValue(":telephone", $user[5]);
     $query->bindValue(":isArtiste", $user[6]);
     $query->bindValue(":presentation", $user[7]);

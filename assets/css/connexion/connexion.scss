@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #0f0d0c;
+    background-color: #e7eae8;
+    font-family: "Noto Sans TC", sans-serif;
+
+    div.container {
+        width: 100%;
+
+        h1 {
+            text-align: center;
+        }
+
+        section.container-connexion-nouveau {
+            width: 70%;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+
+
+
+            article {
+                width: 40%;
+                min-width: 300px;
+                margin: 50px auto;
+                border: #6c6c6c 1px solid;
+                height: 300px;
+                padding: 10px;
+
+                @media (max-widht: 900px) {
+                    width: 90%;
+                }
+            }
+
+            article.container-connexion {
+                .large-form {
+                    margin-top: 25px;
+                    width: 90%;
+                    margin: auto;
+                }
+
+                input,
+                button {
+                    box-sizing: initial;
+                    border: none;
+                    width: 100%;
+                    height: 30px;
+                    padding: 0;
+                    font-size: 15px;
+                    margin: 5px 0 20px;
+                }
+                
+                button{
+                    background: #e84855;
+                    color:#fff;
+                    height: 35px;
+                }
+            }
+
+            article.container-nouveau {
+                width: 40%;
+                margin: auto;
+                position: relative;
+
+                p{
+                    width: 90%;
+                    margin: auto;
+                    text-align: justify;
+                }
+
+                div.button-creation{
+                    width: 90%;
+                    position: absolute; /* postulat de départ */
+                    top: 83%; left: 50%; /* à 50%/50% du parent référent */
+                    transform: translate(-50%, -50%);
+                    height: 35px;
+                    position: absolute;
+                    bottom: 15px;
+                    font-size: 15px;
+                    margin: 5px auto 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: #e84855;
+
+
+                    a{
+                        color: #fff;
+                        text-decoration: inherit;
+                        
+                    }
+                }
+                
+            }
+        }
+    }
+}
+
+.r label::after {
+    content: "*";
+    color: red;
+    margin-left: 5px;
+}
+
+.error-text {
+    color: #e6292e;
+    font-size: 12px;
+}
+
+.error-text::before {
+    content: "";
+}
+
+p.compte-existant{
+    text-align: center;
+    a{
+        color: red;
+        text-decoration: underline;
+    }
+}

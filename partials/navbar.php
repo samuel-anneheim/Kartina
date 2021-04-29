@@ -1,5 +1,6 @@
 <?php
 //Inclure le titre sur les pages
+session_start();
 require __DIR__.'/../config/database.php';
 require __DIR__.'/../config/configTitre.php';
 require __DIR__.'/../config/fonction.php';
@@ -52,7 +53,13 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
 
                 <div class="cap">
                     <div class="account">
-                        <a href="./account.php">Compte</a>
+                        <?php if(isset($_SESSION['user'])){ ?>
+                            <a href="./index.php"><?= $_SESSION['user']['prenom']; ?>  | </a>
+                            <a href="./deconnexion.php">   deconnexion</a>
+                        <?php } else { ?>
+                            <a href="./connexion.php">compte</a>
+                        <?php } ?> 
+                        
                     </div>
 
                     <div class="help">

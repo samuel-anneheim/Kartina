@@ -60,7 +60,7 @@ $name = accents($artiste['prenom'], $artiste['nom']);
 
         <div class="container-images-big">
             <div class="image-principal-big" id="image-principal-big">
-                <a href="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" data-fancybox data-caption="Caption for single image">
+                <a href="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" data-fancybox>
                     <img id="image-principal-big-border" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
                 </a>
             </div>
