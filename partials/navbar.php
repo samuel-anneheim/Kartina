@@ -56,7 +56,7 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
                     </div>
 
                     <div class="help">
-                        <a href="./helpS.php"> Nous contacter</a>
+                        <a href="./help.php"> Nous contacter</a>
                     </div>
 
                     <div class="panier">
