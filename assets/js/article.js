@@ -74,11 +74,10 @@ let price2;
 let price3;
 let bgFormat = document.getElementById('bg-format');
 let bgFinition = document.getElementById('bg-finition');
-let imgPrince2 = document.getElementById('imagePrincipal');
+let imgPrince2 = document.getElementById('image-principal-big-border');
 let bgCadre = document.getElementById('bg-cadre');
-let borderImgPrin = document.getElementById('img-superpose-prince');
-console.log(borderImgPrin);
-let borderImg = document.getElementById('img-superpose');
+let borderImgPrin = document.getElementById('image-decor-big-border');
+let borderImg = document.getElementById('image-decor-min-border-size');
 
 previous.addEventListener("click", function () {
     i--
@@ -193,32 +192,32 @@ for (const id in formatTable) {
          * Changer la miniature en fonctionde la taille
          */
 
-        let imgSuperMin = document.getElementById('minAgr');
+        let imgSuperMin = document.getElementById('image-decor-min-border-size');
         if (id == 'Classique') {
-            imgSuperMin.style.height = '25%'
+            imgSuperMin.style.height = '20%'
         }
         if (id == 'Grand') {
             imgSuperMin.style.height = '30%'
         }
         if (id == 'Géant') {
-            imgSuperMin.style.height = '38%'
+            imgSuperMin.style.height = '40%'
         }
         if (id == 'Collector') {
-            imgSuperMin.style.height = '50%'
+            imgSuperMin.style.height = '55%'
         }
 
-        let imgSuper = document.getElementById('bigSuper')
+        let imgSuper = document.getElementById('image-decor-big-border')
         if (id == 'Classique') {
-            imgSuper.style.height = '25%'
+            imgSuper.style.height = '20%'
         }
         if (id == 'Grand') {
             imgSuper.style.height = '30%'
         }
         if (id == 'Géant') {
-            imgSuper.style.height = '38%'
+            imgSuper.style.height = '40%'
         }
         if (id == 'Collector') {
-            imgSuper.style.height = '50%'
+            imgSuper.style.height = '55%'
         }
 
 

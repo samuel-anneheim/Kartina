@@ -26,6 +26,7 @@ $orientations = $db->query('SELECT * FROM orientation')->fetchAll();
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <title><?php echo "kartina "; if (isset($title)) {echo "| ".$title; }?></title>
 </head>
 

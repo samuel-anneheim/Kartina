@@ -56,35 +56,37 @@ if (!empty($_POST)) {
 $name = accents($artiste['prenom'], $artiste['nom']);
 ?>
 <section class="presentationArticle">
-    <article class="presentationImage">
-        <figure class="grandeImage" id="img-prince">
-            <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="imagePrincipal">
-        </figure>
-        <figure class="superpose-prince" id="fig-superpose-prince">
-            <img src="./assets/img/article/bgc-decor-article.jpg" alt="">
-            <div class="img-superpose-prince" id="bigSuper">
-                <img id="img-superpose-prince" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+    <article class="container-images">
+
+        <div class="container-images-big">
+            <div class="image-principal-big" id="image-principal-big">
+                <a href="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" data-fancybox data-caption="Caption for single image">
+                    <img id="image-principal-big-border" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
+                </a>
             </div>
-        </figure>
-        <div class="selection-image">
 
-            <figure class="listeImage">
-                <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="" id="second1">
-                <div class="superpose" id="second2">
-                    <img src="./assets/img/article/bgc-decor-article.jpg" alt="">
-                    <div class="img-superpose" id="minAgr">
-                        <img id="img-superpose"src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
-                    </div>
+            <div class="image-decor-big" id="image-decor-big">
+                <img src="./assets/img/article/bgc-decor-article.jpg" alt="Décor maison">
+                <div class="image-superpose-big" id="image-decor-big-size">
+                    <img id="image-decor-big-border" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
                 </div>
-            </figure>
-
-            <figure class="aggrandirImage">
-                <img src="./assets/img/article/expand.png" alt="">
-                <figcaption>
-                    <p>Plein écran</p>
-                </figcaption>
-            </figure>
+            </div>
         </div>
+
+        <div class="container-image-min">
+            <div class="image-principal-min" id="image-principal-min">
+                <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
+            </div>
+
+            <div class="image-decor-min" id="image-decor-min">
+                <img src="./assets/img/article/bgc-decor-article.jpg" alt="Décor maison">
+                <div class="image-superpose-min" id="image-decor-min-size">
+                    <img id="image-decor-min-border-size" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+                </div>
+            </div>
+        </div>
+
+
         <article class="descArticle">
             <h1><?= $artiste['prenom'] . ' ' . $artiste['nom']  ?></h1>
             <h2><?= $oeuvre['nom'] ?></h2>
@@ -206,22 +208,25 @@ $name = accents($artiste['prenom'], $artiste['nom']);
     </article>
 </section>
 <script src="./assets/js/article.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 <script>
-    let figurePrince = document.getElementById("fig-superpose-prince");
-    figurePrince.style.display = "none"
+    let decorBig = document.getElementById("image-decor-big");
+    let imgBig = document.getElementById("image-principal-big");
 
-    let imgPrince = document.getElementById("img-prince");
+    decorBig.style.display = "none"
 
-    let image1 = document.getElementById('second1');
-    image1.addEventListener('click', function () {
-        figurePrince.style.display = "none";
-        imgPrince.style.display = "flex"
+
+    let image1 = document.getElementById('image-principal-min');
+    image1.addEventListener('click', function() {
+        decorBig.style.display = "none";
+        imgBig.style.display = "flex"
     })
 
-    let image2 = document.getElementById('second2');
-    image2.addEventListener('click', function () {
-        figurePrince.style.display = "flex";
-        imgPrince.style.display = "none"
+    let image2 = document.getElementById('image-decor-min');
+    image2.addEventListener('click', function() {
+        decorBig.style.display = "flex";
+        imgBig.style.display = "none"
     })
 </script>
 
