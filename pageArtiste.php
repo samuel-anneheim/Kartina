@@ -17,12 +17,10 @@
     $query->execute();
     $artiste = $query->fetch();
 
-
     $name = accents($artiste['prenom'], $artiste['nom'])
 
 
 ?>
-
         <header>
             <div class="nom-artiste">
                 <h1><?= $artiste["prenom"]." ".$artiste["nom"] ?></h1>
@@ -55,10 +53,8 @@
         </div>
         <section>
         <?php foreach ($oeuvres as $oeuvre) { ?>
-            
-        
             <article>
-                <a href="./article.php?=<?= $oeuvre["id"] ?>">
+                <a href="./article.php?id=<?= $oeuvre["id"] ?>">
                     <figure>
                         <img src="./assets/img/artiste/<?= $name."/".$oeuvre["image"] ?>" alt="verticalite-volute-ii-pologne">
                         <figcaption>

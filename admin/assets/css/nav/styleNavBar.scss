@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,100;1,300&display=swap");
+
+nav {
+    width: 100%;
+    background: #24262b;
+    color: white;
+    font-family: "Poppins", sans-serif;
+
+    div.nav-fullscreen {
+        @media (max-width: 1200px) {
+            display: none;
+        }
+        div.container-top {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            div.title-site {
+                min-width: 300px;
+                a {
+                    font-size: 3em;
+                    color: #cf9f10;
+                }
+                p {
+                    margin: 0;
+                }
+            }
+
+            div.container-recherche {
+                width: 30%;
+                padding: 5px;
+
+                input {
+                    width: 70%;
+                    margin: 0;
+                    border: #cf9f10 2px solid;
+                    background: #24262b;
+                    padding: 10px;
+                }
+            }
+
+            div.navigation {
+                width: max-content;
+                ul {
+                    padding: 0;
+                    margin: 0;
+                    list-style: none;
+                    display: flex;
+                    justify-content: start;
+                    align-items: center;
+
+                    .hover-white {
+                        padding: 0;
+                        margin: 5px 30px 5px 0;
+
+                        a {
+                            color: #cf9f10;
+                            font-size: 17px;
+                            transition: color 300ms;
+                        }
+
+                        &:hover{
+                            a{
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        div.container-bottom {
+            padding: 10px;
+            ul {
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
+                li {
+                    padding: 0;
+                    margin: 5px 30px 5px 0;
+                    a{
+                        transition: color 300ms;
+                        font-size: 17px;
+                        color: #fff;
+                    }
+
+                    &:hover{
+                        a{
+                            color: #cf9f10;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.nav-responsive {
+        position: relative;
+        @media (min-width: 1201px) {
+            display: none;
+        }
+        div.title-site {
+            text-align: center;
+            a {
+                font-size: 3em;
+                color: #cf9f10;
+            }
+            p {
+                margin: 0;
+            }
+            input {
+                width: 250px;
+                margin: 10px;
+                border: none;
+                padding: 5px;
+            }
+        }
+        $black: #343838;
+        $blue: #cf9f10;
+        $dullWhite: #f6f6f6;
+        $easing: cubic-bezier(0.6, 0.05, 0.28, 0.91);
+        * {
+            box-sizing: border-box;
+        }
+
+        #title {
+            color: $dullWhite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+        }
+
+        #btn {
+            position: fixed;
+            z-index: 1000;
+            top: 35px;
+            width: 45px;
+            height: 45px;
+            border-radius: 20px;
+            background-color: #24262b;
+            left: 5px;
+            cursor: pointer;
+            transition: left 500ms $easing;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            div {
+                width: 30px;
+                height: 2px;
+                margin-bottom: 8px;
+                background-color: $blue;
+                transition: transform 700ms $easing, opacity 500ms, background-color 250ms;
+
+                &:first-child{
+                    margin-top: 8px;
+                }
+                
+            }
+        }
+
+        #btn.active {
+            left: 90%;
+            div {
+                background-color: $blue;
+            }
+            #top {
+                transform: translateY(10px) rotate(-135deg);
+            }
+            #middle {
+                opacity: 0;
+                transform: rotate(135deg);
+            }
+            #bottom {
+                transform: translateY(-10px) rotate(-45deg);
+            }
+        }
+
+        #box {
+            position: fixed;
+            z-index: 950;
+            overflow: auto;
+            top: 0px;
+            left: -100vw;
+            width: 100vw;
+            opacity: 0;
+            padding: 20px 0px;
+            height: 100%;
+            background-color: $dullWhite;
+            color: $black;
+            transition: all 350ms $easing;
+        }
+
+        #box.active {
+            left: 0px;
+            opacity: 1;
+        }
+
+        #items {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            .item {
+                position: relative;
+                cursor: pointer;
+                font-size: 20px;
+                padding: 15px 30px;
+                transition: all 250ms;
+                &:hover {
+                    padding: 15px 45px;
+                    background-color: transparentize($black, 0.8);
+                }
+                a{
+                    color: #343838;
+                }
+            }
+        }
+
+        #btn,
+        #btn * {
+            will-change: transform;
+        }
+
+        #box {
+            will-change: transform, opacity;
+        }
+    }
+
+    a{
+        text-decoration: initial;
+    }
+}
+
+

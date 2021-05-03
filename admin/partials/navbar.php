@@ -1,10 +1,11 @@
 <?php
 //Inclure le titre sur les pages
 session_start();
-require __DIR__ . '/../config/database.php';
-require __DIR__ . '/../config/configTitre.php';
-require __DIR__ . '/../config/fonction.php';
+require __DIR__ . '/../../config/database.php';
+require __DIR__ . '/../../config/configTitre.php';
+require __DIR__ . '/../../config/fonction.php';
 
+var_dump($_SESSION)
 
 ?>
 
@@ -38,7 +39,7 @@ require __DIR__ . '/../config/fonction.php';
             <div class="nav-fullscreen">
                 <div class="container-top">
                     <div class="title-site">
-                        <a href="./index.php" class="title">Kartina</a>
+                        <a href="../index.php" class="title">Kartina</a>
                         <p>Photographie d'art en édition limitée</p>
                     </div>
                     <div class="container-recherche">
@@ -47,12 +48,12 @@ require __DIR__ . '/../config/fonction.php';
                     <div class="navigation">
                         <ul>
                             <?php if (isset($_SESSION['user'])) { ?>
-                                <li class="hover-white"><a href="./admin/dashborad.php"><?= $_SESSION['user']['prenom']; ?></a></li>
-                                <li class="hover-white"><a href="./deconnexion.php">Deconnexion</a></li>
+                                <li class="hover-white"><a href="./dashboard.php"><?= $_SESSION['user']['prenom']; ?></a></li>
+                                <li class="hover-white"><a href="../deconnexion.php">Deconnexion</a></li>
                             <?php } else { ?>
-                                <li class="hover-white"><a href="./connexion.php">Connexion</a></li>
+                                <li class="hover-white"><a href="../connexion.php">Connexion</a></li>
                             <?php } ?>
-                            <li class="hover-white"><a href="./help.php">Nous contacter</a></li>
+                            <li class="hover-white"><a href="../help.php">Nous contacter</a></li>
                             <li class="hover-white"><a href="">Panier</a></li>
                         </ul>
                     </div>
@@ -62,7 +63,7 @@ require __DIR__ . '/../config/fonction.php';
                     <ul>
                         <li class="hover"><a href="" class="white">Photographies</a></li>
                         <li class="hover"><a href="" class="white">Nouveautés</a></li>
-                        <li class="hover"><a href="./artistes.php" class="white">Artistes</a></li>
+                        <li class="hover"><a href="../artistes.php" class="white">Artistes</a></li>
                         <li class="hover"><a href="" class="white">Derniers exemplaires</a></li>
                     </ul>
                 </div>
@@ -70,7 +71,7 @@ require __DIR__ . '/../config/fonction.php';
 
             <div class="nav-responsive">
                 <div class="title-site">
-                    <a href="./index.php" class="title">Kartina</a>
+                    <a href="../index.php" class="title">Kartina</a>
                     <p>Photographie d'art en édition limitée</p>
                     <input type="text" placeholder="Recherche">
                 </div>
@@ -82,17 +83,23 @@ require __DIR__ . '/../config/fonction.php';
                 <div id="box">
                     <div id="items">
                         <?php if (isset($_SESSION['user'])) { ?>
-                                <div class="item"><a href="./index.php"><?= $_SESSION['user']['prenom']; ?></a></div>
-                                <div class="item"><a href="./deconnexion.php">Deconnexion</a></div>
-                            <?php } else { ?>
-                                <div class="item"><a href="./connexion.php">Connexion</a></div>
-                            <?php } ?>
+                            <div class="item"><a href="./dashboard.php"><?= $_SESSION['user']['prenom']; ?></a></div>
+                            <div class="item"><a href="../deconnexion.php">Deconnexion</a></div>
+                        <?php } else { ?>
+                            <div class="item"><a href="../connexion.php">Connexion</a></div>
+                        <?php } ?>
                         <div class="item"><a href="">Panier</a></div>
                         <div class="item"><a href="">Photographies</a></div>
                         <div class="item"><a href="">Nouveautés</a></div>
-                        <div class="item"><a href="./artistes.php">Artistes</a></div>
+                        <div class="item"><a href="../artistes.php">Artistes</a></div>
                         <div class="item"><a href="">Derniers exemplaires</a></div>
                     </div>
                 </div>
             </div>
         </nav>
+        <?php
+
+        if (!isset($_SESSION['user'])) {
+            require '403.php';
+        }
+        ?>
