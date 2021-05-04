@@ -1,0 +1,55 @@
+div.container-img{
+    width: 100%;
+
+    margin: 30px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: "Poppins", sans-serif;
+
+    article{
+        width: 450px;
+        margin: 30px;
+        border-radius: 20px;
+        border-radius: 0 0 20px 20px;
+
+        div.cardArtiste{
+            width: 100%;
+            transition: all 300ms;
+            border-radius: 20px;
+
+            &:hover{
+                box-shadow: 0 14px 28px grey, 0 10px 10px grey;
+            }
+
+            figure{
+                margin: 0;
+                width: 100%;
+                height: 420px;
+                border-radius: 20px;
+
+                img{
+                    min-width: 100%;
+                    max-width: 100%;
+                    min-height: 350px;
+                    max-height: 350px;
+                    object-fit: cover;
+                    border-radius: 20px 20px 0px 0px;
+                }
+                figcaption{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 50px;
+                    display: flex;
+                    justify-content:space-between;
+                    p{
+                        margin: 10px;
+                        padding: 0;
+                    }
+                }
+            }
+        }
+    }
+}

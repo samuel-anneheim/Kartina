@@ -5,8 +5,6 @@ require __DIR__ . '/../../config/database.php';
 require __DIR__ . '/../../config/configTitre.php';
 require __DIR__ . '/../../config/fonction.php';
 
-var_dump($_SESSION)
-
 ?>
 
 <!DOCTYPE html>
