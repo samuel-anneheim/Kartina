@@ -47,7 +47,7 @@ require __DIR__ . '/../config/fonction.php';
                     <div class="navigation">
                         <ul>
                             <?php if (isset($_SESSION['user'])) { ?>
-                                <li class="hover-white"><a href="./admin/dashborad.php"><?= $_SESSION['user']['prenom']; ?></a></li>
+                                <li class="hover-white"><a href="./admin/dashboard.php"><?= $_SESSION['user']['prenom']; ?></a></li>
                                 <li class="hover-white"><a href="./deconnexion.php">Deconnexion</a></li>
                             <?php } else { ?>
                                 <li class="hover-white"><a href="./connexion.php">Connexion</a></li>

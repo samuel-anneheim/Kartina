@@ -19,7 +19,7 @@ require __DIR__ . '/partials/navbar.php'; ?>
         <div class="container-element">
             <div class="title-element">
                 <img src="./assets/img/dashboard/user.png" alt="">
-                <h2><a href="">Données</a></h2>
+                <h2><a href="./modifDonnee.php">Données</a></h2>
             </div>
             <p>Afficher ou mettre à jour vos infomations personnelles</p>
         </div>

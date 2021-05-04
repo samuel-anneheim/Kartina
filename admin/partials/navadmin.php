@@ -4,7 +4,7 @@
     <div class="container-compte ele">
         <h3>Mon compte</h3>
         <ul>
-            <li><a href="">Données</a></li>
+            <li><a href="./modifDonee">Données</a></li>
             <li><a href="">Adresses</a></li>
         </ul>
     </div>
