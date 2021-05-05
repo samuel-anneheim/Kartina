@@ -4,8 +4,8 @@
     <div class="container-compte ele">
         <h3>Mon compte</h3>
         <ul>
-            <li><a href="./modifDonee">Données</a></li>
-            <li><a href="">Adresses</a></li>
+            <li><a href="./modifDonnee.php">Données</a></li>
+            <li><a href="./adresse.php">Adresses</a></li>
         </ul>
     </div>
 

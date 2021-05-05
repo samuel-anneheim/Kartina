@@ -34,7 +34,7 @@ require __DIR__ . '/partials/navbar.php'; ?>
         <div class="container-element">
             <div class="title-element">
                 <img src="./assets/img/dashboard/position.png" alt="">
-                <h2><a href="">Adresse</a></h2>
+                <h2><a href="./adresse.php">Adresse</a></h2>
             </div>
             <p>Gérez vos adresses de livraison et de facturation</p>
         </div>

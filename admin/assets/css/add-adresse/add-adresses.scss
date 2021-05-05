@@ -188,3 +188,12 @@ body {
     color: #E6292E;
     font-size: 12px;
 }
+
+.r{
+    label::after{
+        content: "*";
+        color: red;
+        margin-left: 5px;
+    }
+
+}
