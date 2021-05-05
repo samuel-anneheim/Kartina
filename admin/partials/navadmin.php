@@ -21,7 +21,7 @@
             <h3>Photographie</h3>
             <ul>
                 <li><a href="">Nouvelle oeuvre</a></li>
-                <li><a href="">Oeuvre</a></li>
+                <li><a href="./oeuvre.php">Oeuvre</a></li>
                 <li><a href="">Vente passées</a></li>
             </ul>
         </div>
