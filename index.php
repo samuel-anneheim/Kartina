@@ -46,7 +46,7 @@ $oeuvres = $db->query('SELECT * FROM oeuvre ORDER BY RAND() LIMIT 6')->fetchAll(
                     <a href="./article.php?id=<?= $oeuvre['id']  ?>">
                         <div class="cardArtiste">
                             <figure>
-                                <img src="./assets/img/artiste/<?= $nom . "/" . $oeuvre["image"] ?>" alt="<?= $oeuvre["nom"] ?>">
+                                <img src="./assets/img/artiste/<?= $user['id'] . "/" . $oeuvre["image"] ?>" alt="<?= $oeuvre["nom"] ?>">
                                 <figcaption>
                                     <div>
                                         <p class="titre"><?= $user['prenom'] . " " . $user['nom']; ?></p>

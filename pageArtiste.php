@@ -56,7 +56,7 @@
             <article>
                 <a href="./article.php?id=<?= $oeuvre["id"] ?>">
                     <figure>
-                        <img src="./assets/img/artiste/<?= $name."/".$oeuvre["image"] ?>" alt="verticalite-volute-ii-pologne">
+                        <img src="./assets/img/artiste/<?= $artiste['id']."/".$oeuvre["image"] ?>" alt="verticalite-volute-ii-pologne">
                         <figcaption>
                             <span class="titre-oeuvre"><?= $oeuvre["nom"] ?></span>
                             <p>à partir de <span class="prix"><?= $oeuvre["prix"] ?>€</span></p>

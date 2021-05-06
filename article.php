@@ -60,28 +60,28 @@ $name = accents($artiste['prenom'], $artiste['nom']);
 
         <div class="container-images-big">
             <div class="image-principal-big" id="image-principal-big">
-                <a href="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" data-fancybox>
-                    <img id="image-principal-big-border" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
+                <a href="./assets/img/artiste/<?= $artiste['id'] ?>/<?= $oeuvre['image'] ?>" data-fancybox>
+                    <img id="image-principal-big-border" src="./assets/img/artiste/<?= $artiste['id'] ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
                 </a>
             </div>
 
             <div class="image-decor-big" id="image-decor-big">
                 <img src="./assets/img/article/bgc-decor-article.jpg" alt="Décor maison">
                 <div class="image-superpose-big" id="image-decor-big-size">
-                    <img id="image-decor-big-border" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+                    <img id="image-decor-big-border" src="./assets/img/artiste/<?= $artiste['id'] ?>/<?= $oeuvre['image'] ?>" alt="">
                 </div>
             </div>
         </div>
 
         <div class="container-image-min">
             <div class="image-principal-min" id="image-principal-min">
-                <img src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
+                <img src="./assets/img/artiste/<?= $artiste['id'] ?>/<?= $oeuvre['image'] ?>" alt="<?= $oeuvre['nom'] ?>">
             </div>
 
             <div class="image-decor-min" id="image-decor-min">
                 <img src="./assets/img/article/bgc-decor-article.jpg" alt="Décor maison">
                 <div class="image-superpose-min" id="image-decor-min-size">
-                    <img id="image-decor-min-border-size" src="./assets/img/artiste/<?= $name ?>/<?= $oeuvre['image'] ?>" alt="">
+                    <img id="image-decor-min-border-size" src="./assets/img/artiste/<?= $artiste['id'] ?>/<?= $oeuvre['image'] ?>" alt="">
                 </div>
             </div>
         </div>
@@ -129,7 +129,7 @@ $name = accents($artiste['prenom'], $artiste['nom']);
                                     </div>
                                     <div class="descriptionFormat">
                                         <p><span class="format"><b><?= mb_strtoupper($format['nom']) ?></b></span> - <?= $format['dimension'] ?> à partir de
-                                            <span class="prix" id="p-<?= $format["nom"] ?>" data-prix="<?= $prix * $augmentationFormat[$key] ?>"><?= ($prix * $augmentationFormat[$key]) ?>€</span>
+                                            <span class="prix" id="p-<?= $format["nom"] ?>" data-prix="<?= $oeuvre['prix'] * $augmentationFormat[$key] ?>"><?= ($oeuvre['prix'] * $augmentationFormat[$key]) ?>€</span>
                                         </p>
                                         <p><?= $format['description'] ?></p>
                                     </div>

@@ -1,5 +1,3 @@
-<?php $_SESSION['user']['isArtiste'] = 1 ?>
-
 <aside>
     <div class="container-compte ele">
         <h3>Mon compte</h3>
@@ -20,7 +18,7 @@
         <div class='container-photographie ele'>
             <h3>Photographie</h3>
             <ul>
-                <li><a href="">Nouvelle oeuvre</a></li>
+                <li><a href="./add-oeuvre.php">Nouvelle oeuvre</a></li>
                 <li><a href="./oeuvre.php">Oeuvre</a></li>
                 <li><a href="">Vente passées</a></li>
             </ul>

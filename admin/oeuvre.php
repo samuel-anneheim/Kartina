@@ -33,10 +33,10 @@ $oeuvres = $query->fetchAll();
                 $nom = accents($user['prenom'], $user['nom']); ?>
 
                 <article>
-                    <a href="./article.php?id=<?= $oeuvre['id']  ?>">
+                    <a href="../article.php?id=<?= $oeuvre['id']  ?>">
                         <div class="cardArtiste">
                             <figure>
-                                <img src="../assets/img/artiste/<?= $nom . "/" . $oeuvre["image"] ?>" alt="<?= $oeuvre["nom"] ?>">
+                                <img src="../assets/img/artiste/<?= $user['id'] . "/" . $oeuvre["image"] ?>" alt="<?= $oeuvre["nom"] ?>">
                                 <figcaption>
                                     <div>
                                         <p class="titre">Quantité : <?= $oeuvre['quantite']?></p>

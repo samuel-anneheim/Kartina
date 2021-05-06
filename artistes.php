@@ -24,7 +24,7 @@ $artistes = $db->query('SELECT * FROM user ')->fetchAll();
             <article>
                 <div class="cardArtiste">
                     <figure>
-                        <img src="./assets/img/artiste/<?= $nom . "/" . $oeuvre['image']; ?>" alt="">
+                        <img src="./assets/img/artiste/<?= $artiste['id'] . "/" . $oeuvre['image']; ?>" alt="">
                         <a href="./pageArtiste.php?id=<?= $artiste["id"] ?>">
                             <figcaption>
                                 <h3><?= $artiste['prenom'] . " " . $artiste['nom'] ?></h3>

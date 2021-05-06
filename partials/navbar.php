@@ -5,7 +5,6 @@ require __DIR__ . '/../config/database.php';
 require __DIR__ . '/../config/configTitre.php';
 require __DIR__ . '/../config/fonction.php';
 
-
 ?>
 
 <!DOCTYPE html>
@@ -60,10 +59,10 @@ require __DIR__ . '/../config/fonction.php';
 
                 <div class="container-bottom">
                     <ul>
-                        <li class="hover"><a href="" class="white">Photographies</a></li>
-                        <li class="hover"><a href="" class="white">Nouveautés</a></li>
+                        <li class="hover"><a href="./photographie.php" class="white">Photographies</a></li>
+                        <li class="hover"><a href="./new-picture.php" class="white">Nouveautés</a></li>
                         <li class="hover"><a href="./artistes.php" class="white">Artistes</a></li>
-                        <li class="hover"><a href="" class="white">Derniers exemplaires</a></li>
+                        <li class="hover"><a href="./dernier-exem.php" class="white">Derniers exemplaires</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,16 +81,16 @@ require __DIR__ . '/../config/fonction.php';
                 <div id="box">
                     <div id="items">
                         <?php if (isset($_SESSION['user'])) { ?>
-                                <div class="item"><a href="./index.php"><?= $_SESSION['user']['prenom']; ?></a></div>
+                                <div class="item"><a href="./admin/dashboard.php"><?= $_SESSION['user']['prenom']; ?></a></div>
                                 <div class="item"><a href="./deconnexion.php">Deconnexion</a></div>
                             <?php } else { ?>
                                 <div class="item"><a href="./connexion.php">Connexion</a></div>
                             <?php } ?>
                         <div class="item"><a href="">Panier</a></div>
-                        <div class="item"><a href="">Photographies</a></div>
-                        <div class="item"><a href="">Nouveautés</a></div>
+                        <div class="item"><a href="./photographie.php">Photographies</a></div>
+                        <div class="item"><a href="./new-picture.php">Nouveautés</a></div>
                         <div class="item"><a href="./artistes.php">Artistes</a></div>
-                        <div class="item"><a href="">Derniers exemplaires</a></div>
+                        <div class="item"><a href="./dernier-exem.php">Derniers exemplaires</a></div>
                     </div>
                 </div>
             </div>
