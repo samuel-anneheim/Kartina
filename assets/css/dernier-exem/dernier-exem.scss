@@ -1,0 +1,93 @@
+$carousel-height: 500px;
+$control-size: 50px;
+a {
+    color: inherit;
+    text-decoration: none;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 375px;
+    box-sizing: border-box;
+    color: #0f0d0c;
+    background-color: #e7eae8;
+    font-family: 'Noto Sans TC', sans-serif;
+
+    .container {
+        width: 100%;
+
+        section.picture {
+            width: 95%;
+            margin: auto;
+            div.title {
+                text-align: center;
+            }
+
+            div.container-img{
+                width: 100%;
+            
+                margin: 30px auto;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                font-family: "Poppins", sans-serif;
+            
+                article{
+                    width: 450px;
+                    margin: 30px;
+                    border-radius: 20px;
+                    border-radius: 0 0 20px 20px;
+            
+                    div.cardArtiste{
+                        width: 100%;
+                        transition: all 300ms;
+                        border-radius: 20px;
+            
+                        &:hover{
+                            box-shadow: 0 14px 28px grey, 0 10px 10px grey;
+                        }
+            
+                        figure{
+                            margin: 0;
+                            width: 100%;
+                            height: 450px;
+                            border-radius: 20px;
+            
+                            img{
+                                min-width: 100%;
+                                max-width: 100%;
+                                min-height: 350px;
+                                max-height: 350px;
+                                object-fit: cover;
+                                border-radius: 20px 20px 0px 0px;
+                            }
+                            figcaption{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 80px;
+                                display: flex;
+                                justify-content:space-between;
+                                p{
+                                    margin: 10px;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            a.bottom-s-img {
+                display: block;
+                text-align: center;
+                font-weight: bold;
+                margin-top: 10px;
+                font-size: 2.5em;
+            }
+        }
+    }
+} 

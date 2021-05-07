@@ -1,7 +1,7 @@
 <?php
 
 $title = "derniers exemplaires";
-$stylesheet = "assets/css/index.css";
+$stylesheet = "assets\css\dernier-exem\dernier-exem.css";
 require './partials/navbar.php';
 
 $oeuvres = $db->query('SELECT * FROM oeuvre ORDER BY quantite')->fetchAll();
@@ -33,6 +33,7 @@ $oeuvres = $db->query('SELECT * FROM oeuvre ORDER BY quantite')->fetchAll();
                                     <div class="price">
                                         <p>A partir de</p>
                                         <p><?= $oeuvre['prix'] ?>€</p>
+                                        <p>quantité: <?= $oeuvre["quantite"] ?></p>
                                     </div>
                                 </figcaption>
                             </figure>
